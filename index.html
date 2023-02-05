@@ -11,22 +11,18 @@
     <base href="/">
     <title>popcorn website</title>
 </head>
+
 <body>
-
-<div id="trailer">
-
-</div>
-
 <header>
   <!-- NAV  -->
   <nav>
-    <div class="nav-center">
-      <div class="links">
-        <a href="">shop</a>
+    <div class="nav__center">
+      <div class="nav__center--logo">
+        <a href=""><span>Shop</span></a>
       </div>
 
- <!-- social media -->
-      <ul class="links">
+  <!-- social media -->
+      <ul class="nav__center--social">
         <li>
           <a href="https://www.twitter.com">
             <i class="fab fa-facebook"></i>
@@ -56,7 +52,7 @@
 
     <!-- login nav -->
       <div>
-        <ul class="links">
+        <ul class="nav__center--login">
           <li>
             <a href="">log in</a>
           </li>
@@ -67,18 +63,19 @@
       </div>
     </div>
   
-      <!-- nav header -->
-      <div class="nav-header">
-        <a href="popcorn">popcorn</a>
-        
-        <button class="nav-toggle">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-      <!-- links -->
-    <ul class="links menu-links">
+<!-- nav header -->
+    <div class="nav__logo">
+      <a href="popcorn">popcorn</a>
+      
+      <button class="nav__header--toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+  <!-- links -->
+    <ul class="nav__menu">
       <li>
-        <a href="#shop">shop</a>
+        <a href="#shop"><span>Shop</span></a>
       </li>
       <li>
         <a href="#contact">contact</a>
@@ -97,220 +94,61 @@
 <!-- =============== 
 popcor
 ===============  -->
-
-<div class="popcorn_seed_one">
-</div>
-
-<div class="popcorn_seed_two">
-</div>
+<div class="popcorn_seed_one"></div>
+<div class="popcorn_seed_two"></div>
 
 <!-- =============== 
 sections main
 ===============  -->
-
-    <main class="article-one">
-      <div class="bg">
-            <img class="bg" src="/html5_css3_javascript_website_popcorn/img/popcorn_main_img.png" alt="glass">
+    <main class="article__one">
+      <div>
+        <img class="article__one--img" src="./img/popcorn_main_img.png" alt="glass">
       </div>
-        <div class="article-one-text" >
-          <h1>we like  poppin’</h1>
-          <div class="article_one_line"></div>          
-          <p>
-            A popcorn kernel's strong hull contains the seed's hard, starchy shell endosperm with 14–20% moisture, which turns to steam as the kernel is heated.
-          </p>
-          <div class="article-one-buttons">
-          <button class="article-one-button_one"> PROJECTS.</button>
-          <button class="article-one-button_two"> CONTACT.</button>
-          </div>
+      <div class="article__one--text" >
+        <h1>we like poppin’</h1>
+        <div class="article__one--line"></div>          
+        <p>
+          A popcorn kernel's strong hull contains the seed's hard, starchy shell endosperm with 14–20% moisture, which turns to steam as the kernel is heated.
+        </p>
+        <div class="article__one--buttons">
+          <button class="main__grafic--one"><span>Shop</span></button>
+          <button class="main__grafic--two"> Contact</button>
         </div>
+      </div>
     </main>
 
 
 <!-- =============== 
 section motto
 ===============  -->
-
-<section class="section-motto">
-
-    <div class="section-motto_img" >
+<div class="section__motto--background">
+  <h1 class="section__motto--menu main__grafic--one" >
+    Fun Facts
+  </h1>
+  <section class="section__motto">
+    <div class="section__motto--img main__grafic--one" >
+        <img src="./img/popcorn_backround.jpg" alt="glass">
     </div>
-      <h1>
-        Fun Facts
-      </h1>
-   
     <div class="section-motto_text" >
       <hr>
-      <h2>
-        POWERFUL AND SIMPLE ONLINE ORDERING
-      </h2>
       <h3>
-        A popcorn kernel's strong hull contains the seed's hard, starchy shell endosperm with 14–20% moisture, which turns to steam as the kernel is heated.      
+        POWERFUL AND SIMPLE ONLINE ORDERING
       </h3>
+      <p>
+        A popcorn kernel's strong hull contains the seed's hard, starchy shell endosperm with 14–20% moisture, which turns to steam as the kernel is heated.      
+      </p>
     </div>
 </section>
-
-
-<!-- =============== 
-section shop
-===============  -->
-
-<section class="illustration">
-  <div class="section-illustrations_logo" >
-    <h1>shop</h1>
-  </div>
-
-  <div class="carousel">
-    <button class="carousel__button carousel__button--left">&#139;</button>
-  <div class="carousel__track-container">
-    <ul class="carousel__track">
-
-      <li class="carousel__slide current-slide">
-        <img class="carousel__images" src="./img/dobry_good_podcast.jpg" width="600px"  alt="">
-      </li>
-
-       <li class="carousel__slide">
-        <img class="carousel__images" src="./img/schneider_cake_club.jpg"   width="600px" alt="">
-      </li>
-
-      <li class="carousel__slide">
-        <img class="carousel__images" src="./img/vegan_pizza.jpg" width="1200px"  alt="">
-      </li>
-
-    </ul>
-  
-  </div>
-  <button class="carousel__button carousel__button--right">&#155;</button>
 </div>
-
-  <div class="section-illustrations">
-      <div class="section-illustrations_container">
-        <picture class="section-illustrations_img" >
-          <img src="./img/dobry_good_podcast.jpg" alt="good podcast logo">
-        </picture>
-    
-        <div class="section-illustrations_text" >
-          <h2>
-          Powerfull and simple online solutions  
-          </h2>
-          <h3>
-            WE INTEGRATE WITH EVERY MAJOR POINT OF DESIGN TO CREATE AN EFFORTLESS ONLINE SOLUTION TO GROW YOUR ONLINE BRAND
-          </h3>
-            <div class="section-illustrations_buttons" >
-              <div class="section-illustrations_button">
-                <button class="section-illustrations_button_one"> </button> <p>APP & WEB.</p> 
-              </div> 
-              <div class="section-motto_button">
-                <button class="section-illustrations_button_two"> </button> <p>ORDER AGGREGATION.</p> 
-              </div> 
-            </div>
-        </div>
-      </div>
-
-    
-        <div class="section-illustrations_container">
-        <div class="section-illustrations_img" >
-          <img src="./img/dobry_good_podcast.jpg" alt="good podcast logo">
-        </div>
-    
-        <div class="section-illustrations_text" >
-          <h2>
-          Powerfull and simple online solutions  
-          </h2>
-          <h3>
-            WE INTEGRATE WITH EVERY MAJOR POINT OF DESIGN TO CREATE AN EFFORTLESS ONLINE SOLUTION TO GROW YOUR ONLINE BRAND
-          </h3>
-            <div class="section-illustrations_buttons" >
-              <div class="section-illustrations_button">
-                <button class="section-illustrations_button_one"> </button> <p>APP & WEB.</p> 
-              </div> 
-              <div class="section-motto_button">
-                <button class="section-illustrations_button_two"> </button> <p>ORDER AGGREGATION.</p> 
-              </div> 
-            </div>
-        </div>
-      </div>
-
-      <div class="section-illustrations_container">
-        <div class="section-illustrations_img" >
-          <img src="./img/dobry_good_podcast.jpg" alt="good podcast logo">
-        </div>
-    
-        <div class="section-illustrations_text" >
-          <h2>
-          Powerfull and simple online solutions  
-          </h2>
-          <h3>
-            WE INTEGRATE WITH EVERY MAJOR POINT OF DESIGN TO CREATE AN EFFORTLESS ONLINE SOLUTION TO GROW YOUR ONLINE BRAND
-          </h3>
-            <div class="section-illustrations_buttons" >
-              <div class="section-illustrations_button">
-                <button class="section-illustrations_button_one"> </button> <p>APP & WEB.</p> 
-              </div> 
-              <div class="section-motto_button">
-                <button class="section-illustrations_button_two"> </button> <p>ORDER AGGREGATION.</p> 
-              </div> 
-            </div>
-        </div>
-      </div>
-
-      <div class="section-illustrations_container">
-        <div class="section-illustrations_img" >
-          <img src="./img/dobry_good_podcast.jpg" alt="good podcast logo">
-        </div>
-    
-        <div class="section-illustrations_text" >
-          <h2>
-          Powerfull and simple online solutions  
-          </h2>
-          <h3>
-            WE INTEGRATE WITH EVERY MAJOR POINT OF DESIGN TO CREATE AN EFFORTLESS ONLINE SOLUTION TO GROW YOUR ONLINE BRAND
-          </h3>
-            <div class="section-illustrations_buttons" >
-              <div class="section-illustrations_button">
-                <button class="section-illustrations_button_one"> </button> <p>APP & WEB.</p> 
-              </div> 
-              <div class="section-motto_button">
-                <button class="section-illustrations_button_two"> </button> <p>ORDER AGGREGATION.</p> 
-              </div> 
-            </div>
-        </div>
-      </div>
-
-      <div class="section-illustrations_container">
-        <div class="section-illustrations_img" >
-          <img src="./img/dobry_good_podcast.jpg" alt="good podcast logo">
-        </div>
-    
-        <div class="section-illustrations_text" >
-          <h2>
-          Powerfull and simple online solutions  
-          </h2>
-          <h3>
-            WE INTEGRATE WITH EVERY MAJOR POINT OF DESIGN TO CREATE AN EFFORTLESS ONLINE SOLUTION TO GROW YOUR ONLINE BRAND
-          </h3>
-            <div class="section-illustrations_buttons" >
-              <div class="section-illustrations_button">
-                <button class="section-illustrations_button_one"> </button> <p>APP & WEB.</p> 
-              </div> 
-              <div class="section-motto_button">
-                <button class="section-illustrations_button_two"> </button> <p>ORDER AGGREGATION.</p> 
-              </div> 
-            </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
 
 <!-- =============== 
 sections contact 
 ===============  -->
-
-        <section id="contact" class="sections three hidden">
-          <div class="fix">
-            <h1 class="section contact" id=”contact”>CONTACT.</h1>
-          </div>
+        <section id="contact" class="section__contact">
+          <h1 class="section__contact--menu main__grafic--one" >
+            Contact
+          </h1>
             <div class="section-property">
               <div class="section-property__one">
                 <h2>CONTACT.</h2>
@@ -331,7 +169,9 @@ sections footer
 ===============  -->
 
     <footer class="footer">
-        <span class="copyright">© 2022 Graphiq Studio.</span>
+      <p class="copyright">
+      <a href="https://graphiqstudio.eu/"> © 2022 Graphiq Studio.</a>
+      </p>
 
         <ul class="social-icons">
             <li>
