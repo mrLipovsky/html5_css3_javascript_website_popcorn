@@ -8,7 +8,7 @@ $errors = array();
 
 global $mysqli;
 
-//Connect to DB
+//Register form Connect to DB
 $db = mysqli_connect('localhost', 'root', '', 'registration') or die('bad connection: '.mysqli_connect_error());
 
 // receive all input values from the form by press input button
@@ -36,11 +36,11 @@ if (count($errors) == 0) {
     mysqli_query($db, $sql);
     $_SESSION['message'] = " You are now logged in";
     $_SESSION['username'] = $username;
-    header("location: Login.php");
+    header("location: index.php");
     }
 }
 
-//Connect to DB
+//Login form Connect to DB
 if (isset($_POST['submit_two'])){
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
@@ -58,7 +58,7 @@ if (count($errors) == 0) {
     $result = mysqli_query($db, $query);
         if (mysqli_num_rows($result) == 1) {
             $_SESSION['email'] = $email;
-            $_SESSION['success'] = "You are logged in";
+            // $_SESSION['success'] = "You are logged in";
             header('location: index.php'); //redirect to home page
         } else {
             array_push($errors, "Wrong email and password combination ");
@@ -70,8 +70,6 @@ if (count($errors) == 0) {
 if (isset($_GET['logout'])) {
     session_destroy();
     unset($_SESSION['email']);
-    header('location: login.php');
+    header('location: index.php');
 }
-
-
 ?>

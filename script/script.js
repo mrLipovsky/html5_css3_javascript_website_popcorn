@@ -1,4 +1,3 @@
-
 // NAVIGATION MENU //
 
 // classList - shows/gets all classes
@@ -7,30 +6,30 @@
 // remove - remove class
 // toggle - toggles class
 
-const navToggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.links');
+// const navToggle = document.querySelector('.nav-toggle');
+// const links = document.querySelector('.nav__center--menu');
 
-navToggle.addEventListener('click', function () {
-    // console.log(links.classList);
-    // console.log(links.classList.contains('random'));
-    // console.log(links.classList.contains('links'));
-    // if(links.classList.contains('links')){
-    //     links.classList.remove('show-links');
-    // } else {
-    //     links.classList.add('show-links');
-    // }
-    links.classList.toggle('show-links');
-    if (navToggle) {
-        // Not called
-        navToggle.addEventListener('click', () => {
-          alert('You clicked the button');
-        });
-      }
+// navToggle.addEventListener('click', function () {
+//     links.classList.toggle('show-links');
+//     if (navToggle) {
+//         // Not called
+//         navToggle.addEventListener('click', () => {
+//           alert('You clicked the button');
+//         });
+//       }
+// });
+
+const navToggle = document.querySelector('.nav__button-toggle');
+const links = document.querySelector('.nav__center--menu');
+
+navToggle.addEventListener('click', function(){
+    links.classList.toggle('show-nav__center--menu');
 });
-//JS FORM REGISTER GRAPHIC//
 
+
+//JS FORM REGISTER GRAPHIC//
 function elementFocus(object){
-  object.style.transform = 'scale(1.2)'
+  object.style.transform = 'scale(1.05)'
 }
 
 function elementLostFocus(object){
