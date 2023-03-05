@@ -27,6 +27,16 @@ navToggle.addEventListener('click', function () {
         });
       }
 });
+//JS FORM REGISTER GRAPHIC//
+
+function elementFocus(object){
+  object.style.transform = 'scale(1.2)'
+}
+
+function elementLostFocus(object){
+  object.style.transform = 'scale(1)'
+}
+
 
 // JS FORM VALIDATION //
 const names = document.getElementById('username');

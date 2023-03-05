@@ -110,7 +110,10 @@
             </div>
             <div class='form__register-input-group input-control'>
                 <label>Email: </label>
-                <input type="email" name="email"  id="email" reguired value="<?php echo $email; ?>">
+                <input type="email" name="email"  id="email" reguired 
+                onfocus="elementFocus(this)"
+                onblur="elementLostFocus(this)"
+                value="<?php echo $email; ?>">
                 <div class="error"></div>
             </div>
             <div class='form__register-input-group input-control'>
