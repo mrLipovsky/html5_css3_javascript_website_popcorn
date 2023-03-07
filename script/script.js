@@ -43,11 +43,11 @@ const password = document.getElementById('password');
 const form = document.getElementById('form__register');
 const errorElement = document.getElementById('error');
 
-form.addEventListener('submit', e => {
-  e.preventDefault();
+// form.addEventListener('submit', e => {
+//   e.preventDefault();
 
-  validateInputs();
-});
+//   validateInputs();
+// });
 
 const setError = (element, message) => {
   const inputControl = element.parentElement;

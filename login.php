@@ -1,5 +1,5 @@
-<?php include('server.php'); 
-
+<?php 
+require dirname(__FILE__)."./server.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <base href="/">
-    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" type="text/css" href="./styles/style_media.css">
     <title>Popcorn login</title>
 </head>
 <body>
@@ -61,6 +62,6 @@ Footer
 javascript
 ===============  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="application/json" src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

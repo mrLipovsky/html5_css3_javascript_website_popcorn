@@ -1,0 +1,368 @@
+
+/* =============== 
+Media
+=============== */
+
+/* For Mobile Phone */
+@media screen and (max-width: 300px) {
+.main__article, 
+.section__motto, 
+.section__contact,
+.nav__all,
+.main__article--buttons {
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width:100%;
+    justify-content: center;
+}
+.section__motto--img,
+.section__motto--menu{
+    display: flex;
+    padding: 0;
+    width:90%;
+    justify-content: center;
+}
+
+.main__article--img {
+max-width: 40%;
+margin: 0 auto; 
+}
+h1, .main__article--text > h1 {
+font-size: 1rem;
+}
+h2,
+h3,
+h4,
+p, .main__article--text > p  {
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+font-size: 0.8rem;
+}
+
+.nav__center--logo {
+padding: 0;
+font-size: 1.5rem;
+font-weight: bold;
+}
+.nav-toggle, 
+.nav__left--shop,
+.nav__center--social,
+.message__login--success {
+display: none;
+font-size: 0.8rem;
+}
+.nav__center--menu {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+overflow: hidden;
+transition: var(--transition);
+font-size: 0.8rem;
+background-color: #d0d0d0;
+}
+.nav__right--login {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+overflow: hidden;
+transition: var(--transition);
+font-size: 0.8rem;
+}
+
+.nav__center--menu a:hover {
+background: transparent;
+}
+.cookies-text {
+    font-size: .8rem;
+    width: 95%;
+    }
+    .cookie-subtitle {
+    font-size: .8rem;
+    color: #444;
+    margin: 0;
+    }
+}    
+/* 
+For Tablets
+@media screen and (max-width: 300px) {
+  .main__article, 
+  .section__motto, 
+  .section__contact,
+  .nav__all,
+  .main__article--buttons {
+      max-width: 300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+  }
+  .main__article--img {
+    max-width: 40%;
+    margin: 0 auto; 
+  }
+  h1, .main__article--text > h1 {
+    font-size: 1rem;
+  }
+  h2,
+  h3,
+  h4,
+  p, .main__article--text > p  {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .nav__center--logo {
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .nav-toggle, 
+  .nav__left--shop,
+  .nav__center--social,
+  .message__login--success,
+  .nav__button-toggle {
+    display: none;
+    font-size: 0.8rem;
+  }
+  .nav__button-toggle{
+    display: none;
+  }
+  .nav__center--menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: var(--transition);
+    font-size: 0.8rem;
+    background-color: #d0d0d0;
+  }
+  .nav__right--login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: var(--transition);
+    font-size: 0.8rem;
+  }
+
+  .nav__center--menu a:hover {
+    background: transparent;
+  }
+
+  .cookies-text {
+    font-size: .8rem;
+    width: 95%;
+  }
+  .cookie-subtitle {
+    font-size: .8rem;
+    color: #444;
+    margin: 0;
+  }
+  }
+
+For Laptops
+  @media screen and (max-width: 600px) {
+  .main__article, 
+  .section__motto, 
+  .section__contact,
+  .nav__all,
+  .main__article--buttons {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+  }
+  .main__article--img {
+    max-width: 40%;
+    margin: 0 auto; 
+  }
+  h1, .main__article--text > h1 {
+    font-size: 1rem;
+  }
+  h2,
+  h3,
+  h4,
+  p, .main__article--text > p  {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  .nav__center--logo {
+    padding: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .nav-toggle, 
+  .nav__left--shop,
+  .nav__center--social,
+  .message__login--success,
+  .nav__button-toggle {
+    display: none;
+    font-size: 0.8rem;
+  }
+  .nav__button-toggle{
+    display: none;
+  }
+  .nav__center--menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: var(--transition);
+    font-size: 0.8rem;
+    background-color: #d0d0d0;
+  }
+  .nav__right--login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: var(--transition);
+    font-size: 0.8rem;
+  }
+
+  .nav__center--menu a:hover {
+    background: transparent;
+  }
+
+  .cookies-text {
+    font-size: .8rem;
+    width: 95%;
+  }
+  .cookie-subtitle {
+    font-size: .8rem;
+    color: #444;
+    margin: 0;
+  }
+  }
+
+For Large Laptops
+  @media screen and (max-width: 992px) {
+    .main__article, 
+    .section__motto--background, 
+    .section__contact {
+        max-width: 992px;
+        margin: 0 auto;
+    }
+    h1 {
+      font-size: 2rem;
+      font-family: var(--ff-primary);
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-family: var(--ff-primary);
+    }
+    h3 {
+      font-size: 1rem;
+      font-family: var(--ff-primary);
+    }
+    p {
+      font-size: 1rem;
+      font-family: var(--ff-secondary);
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1;
+    }
+    .nav-center {
+      max-width: 1170px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+    .nav__center--logo {
+      padding: 0;
+    }
+    .nav-toggle, 
+    nav__left--shop {
+      display: none;
+    }
+    .nav__center--menu {
+      height: auto;
+      display: flex;
+      transition: var(--transition);
+    }
+    .nav__center--menu a {
+      padding: 0;
+      margin: 0 0.5rem;
+    }
+    .nav__center--menu a:hover {
+      padding: 0;
+      background: transparent;
+    }
+    .nav__center--social {
+      display: flex;
+    }
+    .nav__center--social a {
+      margin: 0 0.5rem;
+      transition: var(--transition);
+    }
+    .nav__center--social a:hover {
+      color: var(--clr-primary-5);
+    }
+    .cookies-text {
+      font-size: .8rem;
+      width: 95%;
+      padding: 1rem;
+      /* margin: 1rem; */
+    /* }
+    .cookie-subtitle {
+      font-size: .8rem;
+      color: #444;
+      margin: 0;
+    }
+  } */
+/* For Big TV's (HD Screens) 
+  /* @media screen and (min-width: 1280px) {
+    .main__article, 
+    .section__motto--background, 
+    .section__contact {
+          /* width: 1250px; */
+          /* max-width: 1000px;
+          margin: 0 auto;
+      }
+  }
+  
+ /* For Projectors or Higher Resolution Screens (Full HD) */
+  /* @media screen and (min-width: 1920px) {
+    .main__article, 
+    .section__motto--background, 
+    .section__contact {
+          /* width: 1890px; */
+          /* max-width: 1200px;
+          margin: 0 auto;
+      }
+  } */
+
+/* For 4K Displays (Ultra HD) */
+/* @media screen and (min-width: 3840px) {
+.main__article, 
+.section__motto--background, 
+.section__contact {
+        width: 3810px; 
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+} */
