@@ -1,6 +1,7 @@
 <?php 
-require dirname(__FILE__)."./server.php";
+require "./server.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

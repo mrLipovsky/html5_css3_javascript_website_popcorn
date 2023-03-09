@@ -63,7 +63,6 @@ sections main
     <img class="main__article--img" src="./img/popcorn_main_img.png" alt="glass">
     <div class="main__article--text" >
         <h1>we like poppin’</h1>
-        <div class="main__article--line"></div>          
         <p>
         A popcorn kernel's strong hull contains the seed's hard, starchy shell endosperm with 14–20% moisture, which turns to steam as the kernel is heated.
         </p>
@@ -73,23 +72,21 @@ sections main
         </div>
     </div>
 </main>
+<hr>
 
 
 <!-- =============== 
 section motto
 ===============  -->
-<section class="section__motto--background">
+<section class="section__motto">
     <h1 class="section__motto--menu main__grafic--one" >
         Fun Facts
     </h1>
-    <div class="section__motto">
-        <div class="section__motto--img main__grafic--one" >
-            <img src="./img/popcorn_backround.jpg" alt="glass">
-        </div>
-        <div class="section-motto_text" >
-            <hr>
+    <div class="section__motto--text">
+            <img class="section__motto--img main__grafic--one"
+            src="./img/popcorn_backround.jpg" alt="glass">
             <h3>
-                POWERFUL AND SIMPLE ONLINE ORDERING
+                Powerfull and simle online ordering
             </h3>
             <p>
                 A popcorn kernel's strong hull contains the seed's hard, starchy shell endosperm with 14–20% moisture, which turns to steam as the kernel is heated.      
@@ -97,28 +94,24 @@ section motto
         </div>
     </div>
 </section>
-
+<hr>
 
 <!-- =============== 
 sections contact 
 ===============  -->
-<section id="contact" class="section__contact">
+<section class="section__contact">
     <h1 class="section__contact--menu main__grafic--one" >
         Contact
     </h1>
-    <div class="section-property">
-        <div class="section-property__one">
-            <h2>CONTACT.</h2>
-        </div>
-        <div>
-            <h2>Drop Us A Line</h2>
-            <hr>
-            <p>
-            Don’t be shy. Send us anything. Good recommendations or serious critics, we take it all.
-            </p>
-        </div>
+    <div class="section__contact--text">
+        <h2>CONTACT.</h2>
+        <h3>Drop Us A Line</h3>
+        <p>
+        Don’t be shy. Send us anything. Good recommendations or serious critics, we take it all.
+        </p>
     </div>
 </section>
+<hr>
 
 <!-- =============== 
 footer

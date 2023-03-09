@@ -42,13 +42,15 @@ Header
                 </a>
                 </li>
             </ul>
-        </div>
+        
         <div class="nav__center--logo">
-            <a href="index.php">popcorn</a>
+            <a href="index.php"> <h1>popcorn</h1>
+                </a>
         </div>
+        
     <!-- links -->
-        <div class="nav__center--menu" id="nav-toggle">
-            <ul class="nav__center--menu">
+        <div class="nav__center--menu show-nav__center--menu" id="nav-toggle">
+            <ul class="nav__center--menu ">
                 <li>
                     <a href="#shop"><span>Shop</span></a>
                 </li>
@@ -64,8 +66,9 @@ Header
                 </li>
             </ul>
         </div>
+    </div>
     <!-- login nav -->
-        <div class="nav__right--login" id="nav-toggle">
+        <div class="nav__right--login">
             <ul>
                 <li>
                     <a href="./login.php">log in</a>
@@ -74,7 +77,7 @@ Header
                     <a href="./register.php">sing up</a>
                 </li>
             </ul>
-    </div>    
+        </div>    
 </nav>
 
 </header>

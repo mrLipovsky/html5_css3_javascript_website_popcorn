@@ -4,81 +4,85 @@ Media
 =============== */
 
 /* For Mobile Phone */
-@media screen and (max-width: 300px) {
+@media only screen and (max-width: 767px) {
+
+body {
+  margin: 0;  
+}
+
+h1,h2,h3  {
+  letter-spacing: var(--spacing);
+  line-height: 1;
+  color: var(--clr-black);
+  font-size: 1rem;
+  font-family: var(--ff-secondary);
+  text-align: center;
+  padding: 0;
+  margin: .5rem;
+  font-weight: bold;
+}
+
+h4, p, a {
+    letter-spacing: var(--spacing);
+    color: var(--clr-black);
+    font-size: .6rem;
+    font-family: var(--ff-secondary);
+    text-align: center;
+    padding: 0;
+}
+
 .main__article, 
 .section__motto, 
 .section__contact,
 .nav__all,
-.main__article--buttons {
-    max-width: 300px;
+.main__article--buttons,
+.nav__center--logo {
+    max-width: 290px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     padding: 0;
-    width:100%;
     justify-content: center;
 }
-.section__motto--img,
-.section__motto--menu{
-    display: flex;
-    padding: 0;
-    width:90%;
-    justify-content: center;
-}
-
 .main__article--img {
-max-width: 40%;
-margin: 0 auto; 
+  max-width: 40%;
+  padding: 2rem 0;
 }
-h1, .main__article--text > h1 {
-font-size: 1rem;
+.main__button--one, 
+.main__button--two {
+  margin: .5rem;
 }
-h2,
-h3,
-h4,
-p, .main__article--text > p  {
-margin: 0 auto;
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-font-size: 0.8rem;
+.nav__button-toggle {
+  border: none;
+  background-color: var(--clr-white);
+  padding: 0.5rem 3rem;
 }
 
-.nav__center--logo {
-padding: 0;
-font-size: 1.5rem;
-font-weight: bold;
+.section__motto--img {
+  border: none;
+  background-color: var( --clr-white);
+  max-width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
 }
-.nav-toggle, 
-.nav__left--shop,
+
 .nav__center--social,
-.message__login--success {
-display: none;
-font-size: 0.8rem;
-}
+.nav__left--shop,
 .nav__center--menu {
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-overflow: hidden;
-transition: var(--transition);
-font-size: 0.8rem;
-background-color: #d0d0d0;
-}
-.nav__right--login {
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-overflow: hidden;
-transition: var(--transition);
-font-size: 0.8rem;
+  display: none;
 }
 
-.nav__center--menu a:hover {
-background: transparent;
+.show-nav__center--menu,
+.show-nav__center--menu > ul,
+.nav__right--login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: var(--transition);
 }
+
 .cookies-text {
     font-size: .8rem;
     width: 95%;
@@ -89,91 +93,108 @@ background: transparent;
     margin: 0;
     }
 }    
-/* 
-For Tablets
-@media screen and (max-width: 300px) {
+
+.form__register, 
+.form__login {
+  width: 80%;
+  margin-top: 1rem;
+}
+
+
+/* For Tablets */
+@media only screen and (min-width: 767px) {
+
+  h1,h2,h3  {
+    letter-spacing: var(--spacing);
+    line-height: 1;
+    color: var(--clr-black);
+    font-size: 2rem;
+    font-family: var(--ff-secondary);
+    padding: 0;
+    margin: .5rem;
+    font-weight: bold;
+  }
+  
+  h4, p, a {
+    letter-spacing: var(--spacing);
+    color: var(--clr-black);
+    font-size: 1rem;
+    font-family: var(--ff-secondary);
+    text-align: center;
+  }
+
+  .fab, .far{
+    font-size: 1rem;
+  }
+
+  .nav__center--social > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+  } 
+
+  .nav__all {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    margin: 2rem auto;
+    padding: 0 4rem ;
+  }
+  
   .main__article, 
   .section__motto, 
   .section__contact,
-  .nav__all,
-  .main__article--buttons {
-      max-width: 300px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      padding: 0;
+  .main__article--buttons,
+  .nav__center--logo {
+    display: flex;
+    justify-content: center;
+    padding: 0;  
+    margin: 0 auto;
   }
+
+  .section__motto{
+    flex-direction: column;
+  }
+
   .main__article--img {
     max-width: 40%;
-    margin: 0 auto; 
-  }
-  h1, .main__article--text > h1 {
-    font-size: 1rem;
-  }
-  h2,
-  h3,
-  h4,
-  p, .main__article--text > p  {
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    font-size: 0.8rem;
+    padding: 2rem 0;
   }
 
-  .nav__center--logo {
-    padding: 0;
-    font-size: 1.5rem;
-    font-weight: bold;
+  .main__button--one, 
+  .main__button--two {
+    margin: .5rem;
   }
-  .nav-toggle, 
-  .nav__left--shop,
-  .nav__center--social,
-  .message__login--success,
+  
+  .section__motto--text {
+    border: none;
+    background-color: var( --clr-white);
+    text-align: center;
+  }
+
   .nav__button-toggle {
-    display: none;
-    font-size: 0.8rem;
+    display: none;  
   }
-  .nav__button-toggle{
-    display: none;
-  }
-  .nav__center--menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    overflow: hidden;
-    transition: var(--transition);
-    font-size: 0.8rem;
-    background-color: #d0d0d0;
-  }
+  
+
   .nav__right--login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    overflow: hidden;
-    transition: var(--transition);
-    font-size: 0.8rem;
-  }
-
-  .nav__center--menu a:hover {
-    background: transparent;
-  }
-
+  } 
+  
   .cookies-text {
     font-size: .8rem;
     width: 95%;
-  }
-  .cookie-subtitle {
+    }
+    .cookie-subtitle {
     font-size: .8rem;
     color: #444;
     margin: 0;
-  }
-  }
+    }
+  }    
 
-For Laptops
-  @media screen and (max-width: 600px) {
+/* For Desctop */
+/*    
+@media screen and (max-width: min-width: 1023px) {
   .main__article, 
   .section__motto, 
   .section__contact,

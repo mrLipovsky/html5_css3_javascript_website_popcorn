@@ -23,6 +23,7 @@ const navToggle = document.querySelector('.nav__button-toggle');
 const links = document.querySelector('.nav__center--menu');
 
 navToggle.addEventListener('click', function(){
+    console.log("hello"); 
     links.classList.toggle('show-nav__center--menu');
 });
 
