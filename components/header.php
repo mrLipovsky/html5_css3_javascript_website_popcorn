@@ -80,7 +80,7 @@ Header
                     <a href="./login.php" class="nav-links">log in</a>
                 </li>
                 <li>
-                    <a href="./register.php" class="nav-links">sing up</a>
+                    <a href="./register.php" class="nav-links">sign up</a>
                 </li>
             </ul>
         </div>    

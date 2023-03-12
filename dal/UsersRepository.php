@@ -17,7 +17,7 @@ class UserRepository extends Repository
     public function get_user(string $userName) : User
     {
         $output = new User();
-        $sqlSelect = $this -> connection -> prepare(" SELECT * FROM ".self::TABLE_NAME. " WHERE UserName = ?");
+        $sqlSelect = $this -> connection -> prepare(" SELECT * FROM ".self::TABLE_NAME. " WHERE userName = ?");
         $sqlSelect -> bind_param("s", $userName);
         $sqlSelect -> execute();
         $res = $sqlSelect -> get_result();
@@ -25,10 +25,10 @@ class UserRepository extends Repository
         {
             while ($row = $res -> fetch_assoc()) {
                 $output -> Id = $row["Id"];
-                $output -> Username = $row["Username"];
-                $output -> Password = $row["Password"];
-                $output -> FirstName = $row["FirstName"];
-                $output -> LastName = $row["LastName"];
+                $output -> userName = $row["userName"];
+                $output -> password = $row["password"];
+                $output -> firstName = $row["firstName"];
+                $output -> lastName = $row["lastName"];
             }
         } else {
             echo "0 result";

@@ -1,7 +1,5 @@
 <?PHP
 
-// require_once(__DIR__.'/iRepository.php');
-
 include __DIR__.'/iRepository.php';
 
 
@@ -23,8 +21,6 @@ class Repository implements IRepository
 
     public function create(array $fieldsAndValues) : int
     {
-        //insert into groups(field1, field2) Values(value1, value2)
-        // $sql = "INSERT INTO ".$this -> tableName."(".implode( '', array_keys($fieldsAndValues)).")VALUES('".implode('\'.\'', array_values($fieldsAndValues))."');
         $sql = "INSERT INTO ".$this -> tableName."(".implode(',', array_keys($fieldsAndValues)).")VALUES('".implode('\',\'', array_values($fieldsAndValues))."');";
         $sql = self::prepare_query($sql);
 
@@ -58,7 +54,7 @@ class Repository implements IRepository
         $sql .= implode(",", $sets)." WHERE $condition";
         $sql = self::prepare_query($sql);
         if(!self::run_query($sql)){
-            throw new Exception("Aktualizace stavajici polozku selhala!");
+            throw new Exception("Update crashed");
         }
         return;
     }
@@ -67,7 +63,7 @@ class Repository implements IRepository
     {
         $sql = " DELETE FROM ".$this -> tableName." WHERE $condition;";
         if(!self::run_query($sql)){
-            throw new Exception("Aktualizace stavajici polozku selhala!");
+            throw new Exception("Deletion crashed!");
         }
         return;
     }

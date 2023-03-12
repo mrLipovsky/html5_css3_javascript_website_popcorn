@@ -13,6 +13,13 @@ $database = 'registration';
 //Register form Connect to DB
 $connection = mysqli_connect($servername, $username, $password, $database) or die('bad connection: '.mysqli_connect_error());
 
+if ($connection -> connect_errno) {
+    echo "Failed to connect to MySQL: " . $connection -> connect_error;
+    exit();
+  }
+  echo "Connect Successfully. Host info: " . mysqli_get_host_info($connection);
+
+
 // // receive all input values from the form by press input button
 // if (isset($_POST['submit_one'])) {
 //     $username = mysqli_real_escape_string($db, $_POST['username']);

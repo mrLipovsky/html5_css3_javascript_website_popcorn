@@ -108,7 +108,7 @@ JS MENU NAV
 .nav__center--logo {
   text-decoration: none;
 }
-.nav__center--logo a h1{
+header .nav__center--logo a h1{
   font-size: 2.5rem;
 }
 .nav__center--nav li,
@@ -169,9 +169,15 @@ h4, p, a {
   font-family: var(--ff-secondary);
   text-align: center;
 }
-.fab, .far, .fas{
+header .fab, .far, .fas{
   font-size: 1.5rem;
 }
+
+footer .fab, .far, .fas{
+  font-size: 1rem;
+}
+
+
 .nav__center--social > ul {
   display: flex;
   flex-direction: row;
@@ -205,8 +211,11 @@ h4, p, a {
 .main__article--text {
   margin: 2rem ;
 }
-.nav__center--logo a h1{
-  font-size: 4rem;
+header .nav__center--logo a h1{
+  font-size: 3rem;
+}
+footer .nav__center--logo a h1 {
+  font-size: 2rem;
 }
 
 .nav__center--login,

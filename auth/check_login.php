@@ -1,4 +1,5 @@
 <?PHP
+session_start();
 
 require_once(__DIR__."/../db/db.php");
 require_once(__DIR__."/auth.php");
@@ -8,7 +9,7 @@ $auth = new Auth($connection);
 
 if(isset($_POST["submit"]))
 {
-    $userName = $_POST["username"];
+    $userName = $_POST["userName"];
     $password = $_POST["password"];
     if(isset($userName) && isset($password) && !empty($userName) && !empty($password)){
         // validator
@@ -18,7 +19,7 @@ if(isset($_POST["submit"]))
                 setcookie("remember", 1, time() + 86400 * 10); // vyprsi za 10 dnu
             }
             
-            if(!isset($_COOKIE["username"])){
+            if(!isset($_COOKIE["userName"])){
                 setcookie("username", $userName, time() + 86400 * 10); // vyprsi za 10 dnu
             }
             

@@ -10,8 +10,8 @@ Footer
     </p>
     </div>
     <div id="cloud" class="nav__center--logo">
-                <a href="index.php"> <h1>popcorn</h1>
-                </a>
+        <a href="index.php"> <h1>popcorn</h1>
+        </a>
     </div>
 
     <ul class="nav__center--social">

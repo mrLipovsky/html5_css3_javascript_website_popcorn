@@ -1,6 +1,5 @@
 <?PHP
 
-
 require_once(__DIR__."/icrypt.php");
 
 class Crypt implements ICrypt   
@@ -10,15 +9,15 @@ class Crypt implements ICrypt
     private string $iv = "adsf123--kHS49-5";
     private int $options = 0;
 
-    public function decrypt(string $heslo) : string
+    public function decrypt(string $password) : string
     {
-        return openssl_decrypt($heslo, $this -> ciphering, $this -> key, $this -> options,$this -> iv);
+        echo 'Password decripted';
+        return openssl_decrypt($password, $this -> ciphering, $this -> key, $this -> options,$this -> iv);
     }
-    public function encrypt(string $heslo) : string
+    public function encrypt(string $password) : string
     {
-        return openssl_encrypt($heslo, $this -> ciphering, $this -> key, $this -> options,$this -> iv);
+        return openssl_encrypt($password, $this -> ciphering, $this -> key, $this -> options,$this -> iv);
     }
-
 }
 
 

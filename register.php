@@ -25,35 +25,43 @@ Header
 Register Form
 ===============  -->
 <Section>
-    <form id="form__register" class="form__register" method="POST" action="./auth/check_signup.php">
-    <h1>Login</h1>
+    <form id="form__register" 
+    class="form__register"
+    method="POST" 
+    action="./auth/check_signup.php">
+    <h1>Sign in</h1>
     <!-- display validation error here-->
             <div class='form__register-input-group input-control'>
-                <label for="username">Username: </label>
-                <input type="name" name="UserName" id="username" 
+                <label for="userName">Email: </label>
+                <input type="text" name="userName" id="userName" 
                 reguired 
                 class="main__input--one"
             </div>
             <div class='form__register-input-group input-control'>
-                <label>Email: </label>
-                <input type="email" name="Email" id="email" 
-                reguired 
-                class="main__input--one">
-            </div>
-            <div class='form__register-input-group input-control'>
                 <label for="password">Password: </label>
-                <input type="password"  name="Password" id="password" 
+                <input type="password"  name="password" id="password" 
                 reguired
                 class="main__input--one">
             </div>
             <div class='form__register-input-group input-control'>
-                <label for="ConfirmPassword">Password: </label>
-                <input type="password"  name="ConfirmPassword" id="password" 
+                <label for="confirmationPassword">Confirm Password: </label>
+                <input type="password"  name="confirmationPassword" id="confirmationPassword" 
                 reguired
+                class="main__input--one">
+            </div>
+            <div class='form__register-input-group input-control'>
+                <label for="firstName">First name: </label>
+                <input type="text"  name="firstName" id="firstName" 
+    
+                class="main__input--one">
+            </div>
+            <div class='form__register-input-group input-control'>
+                <label for="lastName">Last name: </label>
+                <input type="text"  name="lastName" id="lastName" 
                 class="main__input--one">
             </div>
             <div class='form__register-input-btn'>
-                <input type="submit" name="submit_one" value="register" 
+                <input type="submit" name="submit" value="register" 
                 class="form__register-btn main__button--one">
             </div>
             <div class='form__register-input-info'>

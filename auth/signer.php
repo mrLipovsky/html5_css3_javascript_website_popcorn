@@ -17,12 +17,12 @@ class Signer implements ISigner
         $this -> crypt = new Crypt();
     }
 
-    public function add_user(string $username,string $password, string $confirmPassword, string $firstName, string $lastName) : void
+    public function add_user(string $userName,string $password, string $confirmationPassword, string $firstName, string $lastName) : void
     {
-        if($password === $confirmPassword)
+        if($password === $confirmationPassword)
         {
             $enc_password = $this -> crypt -> encrypt($password);
-            $sql = " INSERT INTO ".self::TABLE_NAME."(UserName, Password, FirstName, LastName)VALUES('$username', '$enc_password', '$firstName', '$lastName')";
+            $sql = " INSERT INTO ".self::TABLE_NAME."(userName, password, firstName, lastName)VALUES('$userName', '$enc_password', '$firstName', '$lastName')";
             if($this -> connection -> query($sql))
             {
                 throw new Exception("Adding new user crashed");
@@ -30,12 +30,12 @@ class Signer implements ISigner
         }
     }
 
-    public function update_user(string $username,string $newPassword, string $confirmNewPassword) :void
+    public function update_user(string $userName,string $newPassword, string $confirmNewPassword) :void
     {
         if($newPassword === $confirmNewPassword)
         {
             $enc_password = $this -> crypt -> encrypt($newPassword);
-            $sql = "UPDATE ".self::TABLE_NAME." SET password = '$enc_password' WHERE UserName = '$username' ";
+            $sql = "UPDATE ".self::TABLE_NAME." SET password = '$enc_password' WHERE userName = '$userName' ";
             if($this -> connection -> query($sql))
             {
                 throw new Exception("User name update crashed");
@@ -43,9 +43,9 @@ class Signer implements ISigner
         }
     }
 
-    public function delete_user(string $username) : void
+    public function delete_user(string $userName) : void
     {
-        $sql = "DELETE FROM ".self::TABLE_NAME." WHERE UserName = '$username'";
+        $sql = "DELETE FROM ".self::TABLE_NAME." WHERE UserName = '$userName'";
             if($this -> connection -> query($sql))
             {
                 throw new Exception("User deletion user crashed");

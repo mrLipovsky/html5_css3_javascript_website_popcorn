@@ -1,16 +1,17 @@
 <?PHP 
 session_start();
+// session_start();
 
-require_once(__DIR__.'/dal/Repository.php');
-require_once(__DIR__.'/db/db.php');
-require_once(__DIR__.'/model/User.php');
-require_once(__DIR__.'/dal/UsersRepository.php');
-require_once(__DIR__.'/dal/GroupRepository.php');
-require_once(__DIR__.'/dal/ItemRepository.php');
-require_once(__DIR__.'/model/Group.php');
-require_once(__DIR__.'/auth/crypt.php');
-require_once(__DIR__.'/auth/auth.php');
-require_once(__DIR__.'/auth/login.php');
+// require_once(__DIR__.'/dal/Repository.php');
+// require_once(__DIR__.'/db/db.php');
+// require_once(__DIR__.'/model/User.php');
+// require_once(__DIR__.'/dal/UsersRepository.php');
+// require_once(__DIR__.'/dal/GroupRepository.php');
+// require_once(__DIR__.'/dal/ItemRepository.php');
+// require_once(__DIR__.'/model/Group.php');
+// require_once(__DIR__.'/auth/crypt.php');
+// require_once(__DIR__.'/auth/auth.php');
+// require_once(__DIR__.'/login.php');
 
 // $auth = new Auth($connection);
 
@@ -26,7 +27,7 @@ require_once(__DIR__.'/auth/login.php');
 // ssjhjjs
 
 // $repo = new ItemRepository($connection);
-$crypt = new Crypt();
+// $crypt = new Crypt();
 
 // $input = array("Username" => "PeterLipo", "Password" => "ssjhjjs", "FirstName" => "Peter", "LastName"=> "Lipo");
 // $newUserId = $repo -> create($input);
@@ -47,11 +48,7 @@ $crypt = new Crypt();
 
 // echo $crypt -> encrypt("ssjhjjs");
 
-
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,8 +58,8 @@ $crypt = new Crypt();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <base href="/">
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
-    <link rel="stylesheet" type="text/css" href="./styles/style_media.css">
+    <link href="/styles/style.css" rel="stylesheet" media="screen">
+    <link href="/styles/style_media.css" rel="stylesheet" media="screen">
     <title>popcorn website</title>
 </head>
 
@@ -88,7 +85,7 @@ include "./components/header.php";
         <?php endif  ?>
         <?php if (isset($_SESSION['email'])): ?>
             <div class="message__login--text">
-            <p>Welcome <strong><?php echo $_SESSION['email']?></strong> you are log in.</p>
+            <p>Welcome <strong><?php echo $_SESSION['userName']?></strong> you are log in.</p>
             <p><a href="index.php?logout='1'" style="color:red;"> &nbsp Logout</a></p>
             </div>
         <?php endif  ?>
@@ -106,7 +103,7 @@ popcor
 sections main
 ===============  -->
 <main class="main__article">
-    <img class="main__article--img" src="./img/popcorn_main_img.png" alt="glass">
+    <img class="main__article--img" src="./img/popcorn_main_img.png" alt="popcorn">
     <div class="main__article--text" >
         <h1>we like poppin’</h1>
         <p>
@@ -194,7 +191,7 @@ sections contact
 footer
 ===============  -->
 <?php
-    include "./components/footer.php";
+include "./components/footer.php";
 ?>
 
 <!-- =============== 
