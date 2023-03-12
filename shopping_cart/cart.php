@@ -75,7 +75,7 @@ Header-cart menu
                   <?php echo $fetch_cart['name']; ?>
                </td>
                <td>
-                  $<?php echo number_format($fetch_cart['price']); ?>
+                  <?php echo number_format($fetch_cart['price']); ?>EUR
                </td>
                <td>
                   <form action="" method="post">
@@ -93,7 +93,7 @@ Header-cart menu
                   </form>   
                </td>
                <td>
-                  $<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>
+                  <?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>EUR
                </td>
                <td>
                   <a              
@@ -119,7 +119,7 @@ Header-cart menu
             <tr class="shopping__cart--table-bottom">
                <div>
                   <td> 
-                     grand total $<?php echo $grand_total; ?>
+                     grand total <?php echo $grand_total; ?>EUR
                   </td>
                   <td>
                      <a 

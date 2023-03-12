@@ -7,7 +7,7 @@ require_once(__DIR__."/../model/User.php");
 
 class UserRepository extends Repository 
 {
-    private const TABLE_NAME = "Users";
+    private const TABLE_NAME = "users";
 
     public function __construct(mysqli $connection)
     {
@@ -17,7 +17,7 @@ class UserRepository extends Repository
     public function get_user(string $userName) : User
     {
         $output = new User();
-        $sqlSelect = $this -> connection -> prepare(" SELECT * FROM ".self::TABLE_NAME. " WHERE userName = ?");
+        $sqlSelect = $this -> connection -> prepare(" SELECT * FROM ".self::TABLE_NAME." WHERE userName = ?");
         $sqlSelect -> bind_param("s", $userName);
         $sqlSelect -> execute();
         $res = $sqlSelect -> get_result();
@@ -33,6 +33,7 @@ class UserRepository extends Repository
         } else {
             echo "0 result";
         }
+        echo "1 result";
         return $output;
     }
 }

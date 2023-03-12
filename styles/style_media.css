@@ -230,6 +230,9 @@ footer .nav__center--logo a h1 {
     max-width: 40%;
     padding: 2rem 0;
   }
+  .main__article--text p {
+    text-align: left;
+  }
 
   .main__button--one, 
   .main__button--two {
@@ -260,38 +263,138 @@ footer .nav__center--logo a h1 {
     }
   }    
 
-/* For Desctop */
-/*    
-@media screen and (max-width: min-width: 1023px) {
+/* 
+
+For Desctop 
+
+*/
+@media screen and (min-width: 1023px){
   .main__article, 
   .section__motto, 
   .section__contact,
   .nav__all,
   .main__article--buttons {
-      max-width: 600px;
-      margin: 0 auto;
+      max-width: 900px;
+      margin: 2rem auto;
       display: flex;
-      flex-direction: column;
       padding: 0;
   }
   .main__article--img {
     max-width: 40%;
     margin: 0 auto; 
   }
-  h1, .main__article--text > h1 {
+  h1,h2,h3  {
+    letter-spacing: var(--spacing);
+    line-height: 1;
+    color: var(--clr-black);
+    font-size: 2rem;
+    font-family: var(--ff-secondary);
+    padding: 0;
+    margin: .5rem;
+    font-weight: bold;
+  }
+    
+  h4, p, a {
+    letter-spacing: var(--spacing);
+    color: var(--clr-black);
+    font-size: 1rem;
+    font-family: var(--ff-secondary);
+    text-align: center;
+  }
+  header .fab, .far, .fas{
+    font-size: 1.5rem;
+  }
+  
+  footer .fab, .far, .fas{
     font-size: 1rem;
   }
-  h2,
-  h3,
-  h4,
-  p, .main__article--text > p  {
-    margin: 0 auto;
+  
+  
+  .nav__center--social > ul {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    font-size: 0.8rem;
+    flex-direction: row;
+    justify-content: space-between
+  } 
+  .nav__all {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    margin: 2rem auto;
+    justify-content: space-between;
+  }
+  .form__register, 
+  .form__login {
+    /* width: 50%; */
+    margin-top: 1rem;
+  }
+  .main__article, 
+  .section__motto, 
+  .section__contact,
+  .main__article--buttons,
+  .nav__center--logo {
+    display: flex;
+    justify-content: center;
+  }
+  .section__motto--menu,
+  .section__motto--img,
+  .section__motto--img--second,
+  .section__motto--text,
+  .main__article--img,
+  .main__article--text {
+    margin: 2rem ;
+  }
+  header .nav__center--logo a h1{
+    font-size: 3rem;
+  }
+  footer .nav__center--logo a h1 {
+    font-size: 2rem;
+  }
+  
+.nav__center--login,
+.nav__left--shop {
+  margin: 0 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.main__article--img {
+    max-width: 40%;
+    padding: 2rem 0;
+}
+.main__article--text p {
+  text-align: left;
+}
+
+.main__button--one, 
+.main__button--two {
+    margin: .5rem;
+  }
+  
+.section__motto{
+  flex-direction: column;
+}
+
+.section__motto--text {
+  border: none;
+  text-align: center;
+}
+
+.cookies-text {
+  font-size: .8rem;
+  width: 95%;
+  }
+  .cookie-subtitle {
+  font-size: .8rem;
+  color: #444;
+  margin: 0;
   }
 
+  .nav__center--toggle {
+    display: none;
+  }
+}    
+
+/*    
   .nav__center--logo {
     padding: 0;
     font-size: 1.5rem;

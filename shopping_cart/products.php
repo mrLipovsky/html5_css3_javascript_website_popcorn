@@ -69,7 +69,7 @@ Header-cart menu
                <img 
                src="uploaded_img/<?php echo $fetch_product['image']; ?>" alt="">
                <h3><?php echo $fetch_product['name']; ?></h3>
-               <div class="price">$<?php echo $fetch_product['price']; ?></div>
+               <div class="price"><?php echo $fetch_product['price']; ?>EUR</div>
                <input 
                type="hidden" 
                name="product_name" 

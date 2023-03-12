@@ -6,7 +6,7 @@ Header
 <nav>
     <div class="nav__all">
         <div class="nav__left--shop">
-            <a href=""><span>Shop</span></a>
+            <a href="../shopping_cart/products.php"><span>Shop</span></a>
         </div>
 
 <!-- nav header -->
@@ -41,7 +41,7 @@ Header
             </ul>
         
             <div id="cloud" class="nav__center--logo">
-                <a href="index.php"> <h1>popcorn</h1>
+                <a href="../index.php"> <h1>popcorn</h1>
                 </a>
             </div>
             <div class="nav__center--toggle" id="js-navbar-toggle"> 
@@ -52,7 +52,7 @@ Header
             <ul class="nav__center--nav" id="js-menu">
                 <li>
                     <a 
-                    href="#shop" 
+                    href="../shopping_cart/products.php" 
                     class="nav__center--links"><span>Shop</span></a>
                 </li>
                 <li>
@@ -77,10 +77,10 @@ Header
         <div >
             <ul class="nav__center--login" id="js-menu-login">
                 <li>
-                    <a href="./login.php" class="nav-links">log in</a>
+                    <a href="../login.php" class="nav-links">log in</a>
                 </li>
                 <li>
-                    <a href="./register.php" class="nav-links">sign up</a>
+                    <a href="../register.php" class="nav-links">sign up</a>
                 </li>
             </ul>
         </div>    

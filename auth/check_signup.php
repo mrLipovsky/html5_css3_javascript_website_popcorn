@@ -12,7 +12,7 @@ if(isset($_POST["submit"]))
 {
     $userName = $_POST["userName"];
     $password = $_POST["password"];
-    $confirmationPassword = $_POST["ConfirmationPassword"];
+    $confirmationPassword = $_POST["confirmationPassword"];
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
     if(isset($userName) && isset($password) && !empty($confirmationPassword) && !empty($firstName) && !empty($lastName) 
@@ -22,6 +22,7 @@ if(isset($_POST["submit"]))
         $signer -> add_user($userName, $password, $confirmationPassword, $firstName, $lastName);
     }
 } 
-header("Location: ../login.php");
+
+header("Location: /../shopping_cart/cart.php");
 
 ?>

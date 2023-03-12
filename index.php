@@ -83,7 +83,7 @@ include "./components/header.php";
             </div>
             
         <?php endif  ?>
-        <?php if (isset($_SESSION['email'])): ?>
+        <?php if (isset($_SESSION['userName'])): ?>
             <div class="message__login--text">
             <p>Welcome <strong><?php echo $_SESSION['userName']?></strong> you are log in.</p>
             <p><a href="index.php?logout='1'" style="color:red;"> &nbsp Logout</a></p>
@@ -110,7 +110,9 @@ sections main
         A popcorn kernel's strong hull contains the seed's hard, starchy shell endosperm with 14–20% moisture, which turns to steam as the kernel is heated.
         </p>
         <div class="main__article--buttons">
-            <button class="main__button--one"><span>Shop</span></button>
+            <button class="main__button--one">
+                <span>Shop</span>
+            </button>
             <button class="main__button--two"> Contact</button>
         </div>
     </div>
@@ -149,7 +151,8 @@ section motto
             <br>
             Potato Chips      11 g
             <br>
-            Tortilla Chips     5 g            </p>
+            Tortilla Chips     5 g            
+            </p>
         </div>
     </div>
 </section>

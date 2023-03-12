@@ -20,7 +20,7 @@ if(isset($_POST["submit"]))
             }
             
             if(!isset($_COOKIE["userName"])){
-                setcookie("username", $userName, time() + 86400 * 10); // vyprsi za 10 dnu
+                setcookie("userName", $userName, time() + 86400 * 10); // vyprsi za 10 dnu
             }
             
             if(!isset($_COOKIE["password"])){
@@ -30,8 +30,8 @@ if(isset($_POST["submit"]))
         if($auth -> check_user($userName, $password))
         {
             session_start();
-            $_SESSION["name"] = $userName;
-            $_SESSION["heslo"] = $password;
+            $_SESSION["userName"] = $userName;
+            $_SESSION["password"] = $password;
             header("Location: ../index.php");
         }
         else{

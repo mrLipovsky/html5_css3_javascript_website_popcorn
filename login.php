@@ -16,7 +16,7 @@
 Header
 ===============  -->
 <?php
-    include "./components/header.php";
+    include "../web_popcorn/components/header.php";
 ?>
 <!-- =============== 
 Login Form

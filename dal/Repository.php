@@ -25,14 +25,16 @@ class Repository implements IRepository
         $sql = self::prepare_query($sql);
 
         if(!self::run_query($sql)){
-            throw new Exception("Pridani nove polozky selhalo");
+            throw new Exception("adding new item crached");
         }
+        echo "chyba";
         return $this -> connection -> insert_id;
+
     }
 
     public function retrieve(?string $condition = null): array
     {
-        $sql = "SELECT * FROM ".$this -> tableName;
+        $sql = " SELECT * FROM ".$this -> tableName;
         if($condition != null)
         {
             $sql .= " WHERE $condition";
@@ -40,13 +42,14 @@ class Repository implements IRepository
 
         $result = self::run_query($sql);
         $rows = $result -> fetch_all(PDO::FETCH_ASSOC);
+        echo "chyba";
         return $rows;
 
     }
 
     public function update(array $fieldsAndValuesToUpdate, string $condition): void
     {
-        $sql = "UPDATE ".$this -> tableName." SET ";
+        $sql = " UPDATE ".$this -> tableName." SET ";
         $sets = array();
         foreach ($fieldsAndValuesToUpdate as $key => $value) {
             array_push($sets, "$key = '$value'");

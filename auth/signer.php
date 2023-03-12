@@ -25,6 +25,7 @@ class Signer implements ISigner
             $sql = " INSERT INTO ".self::TABLE_NAME."(userName, password, firstName, lastName)VALUES('$userName', '$enc_password', '$firstName', '$lastName')";
             if($this -> connection -> query($sql))
             {
+                echo "connection ok";
                 throw new Exception("Adding new user crashed");
             }
         }
@@ -35,9 +36,10 @@ class Signer implements ISigner
         if($newPassword === $confirmNewPassword)
         {
             $enc_password = $this -> crypt -> encrypt($newPassword);
-            $sql = "UPDATE ".self::TABLE_NAME." SET password = '$enc_password' WHERE userName = '$userName' ";
+            $sql = " UPDATE ".self::TABLE_NAME." SET password = '$enc_password' WHERE userName = '$userName' ";
             if($this -> connection -> query($sql))
             {
+                echo "connection ok";
                 throw new Exception("User name update crashed");
             }
         }
@@ -45,9 +47,10 @@ class Signer implements ISigner
 
     public function delete_user(string $userName) : void
     {
-        $sql = "DELETE FROM ".self::TABLE_NAME." WHERE UserName = '$userName'";
+        $sql = " DELETE FROM ".self::TABLE_NAME." WHERE UserName = '$userName'";
             if($this -> connection -> query($sql))
             {
+                echo "connection ok";
                 throw new Exception("User deletion user crashed");
             }
     }

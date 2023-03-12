@@ -10,7 +10,7 @@ if(isset($_POST["submit"]))
 {
     session_start();
     $signer = new Signer($connection);
-    $signer -> delete_user($_SESSION["email"]);
+    $signer -> delete_user($_SESSION["userName"]);
     $auth = new Auth($connection);
     $auth -> logout();
 }
