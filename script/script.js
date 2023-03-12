@@ -1,41 +1,25 @@
 // NAVIGATION MENU //
+let mainNav = document.getElementById('js-menu');
+let loginRegistrationNav = document.getElementById('js-menu-login');
+let navBarToggle = document.getElementById('js-navbar-toggle');
 
-// classList - shows/gets all classes
-// contains - checks classList for specific class
-// add - add class
-// remove - remove class
-// toggle - toggles class
 
-// const navToggle = document.querySelector('.nav-toggle');
-// const links = document.querySelector('.nav__center--menu');
-
-// navToggle.addEventListener('click', function () {
-//     links.classList.toggle('show-links');
-//     if (navToggle) {
-//         // Not called
-//         navToggle.addEventListener('click', () => {
-//           alert('You clicked the button');
-//         });
-//       }
-// });
-
-const navToggle = document.querySelector('.nav__button-toggle');
-const links = document.querySelector('.nav__center--menu');
-
-navToggle.addEventListener('click', function(){
-    console.log("hello"); 
-    links.classList.toggle('show-nav__center--menu');
+navBarToggle.addEventListener('click', function () {
+    mainNav.classList.toggle('active');
 });
+
+navBarToggle.addEventListener('click', function () {
+    loginRegistrationNav.classList.toggle('active');
+});
+
+function myFunction(x) {
+  x.classList.toggle("fa-solid fa-x");
+}
 
 
 //JS FORM REGISTER GRAPHIC//
-function elementFocus(object){
-  object.style.transform = 'scale(1.05)'
-}
 
-function elementLostFocus(object){
-  object.style.transform = 'scale(1)'
-}
+
 
 
 // JS FORM VALIDATION //

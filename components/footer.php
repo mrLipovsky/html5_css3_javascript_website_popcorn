@@ -2,11 +2,19 @@
 Footer
 ===============  -->
 <footer class="footer">
-    <p class="copyright">
+    <div></div>
+    <div>
+    <div class="copyright">
+    <p >
     <a href="https://graphiqstudio.eu/"> © 2022 Graphiq Studio.</a>
     </p>
+    </div>
+    <div id="cloud" class="nav__center--logo">
+                <a href="index.php"> <h1>popcorn</h1>
+                </a>
+    </div>
 
-    <ul class="social-icons">
+    <ul class="nav__center--social">
         <li>
             <a href="https://www.twitter.com">
                 <i class="fab fa-facebook"></i>
@@ -33,4 +41,6 @@ Footer
             </a>
         </li>
     </ul>
+    </div>
+    <div></div>
 </footer>

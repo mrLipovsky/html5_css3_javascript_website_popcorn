@@ -1,8 +1,3 @@
-<?php include('server.php');  
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,35 +25,36 @@ Header
 Register Form
 ===============  -->
 <Section>
-    <form id="form__register" class="form__register" method="POST" action="register.php">
+    <form id="form__register" class="form__register" method="POST" action="./auth/check_signup.php">
+    <h1>Login</h1>
     <!-- display validation error here-->
-    <?php include('errors.php');  ?>
-            <div id="error"></div>
             <div class='form__register-input-group input-control'>
                 <label for="username">Username: </label>
-                <input type="name" name="username" id="username" reguired 
-                onfocus="elementFocus(this)"
-                onblur="elementLostFocus(this)"
-                value="<?php echo $username; ?>">
-                <div class="error"></div>
+                <input type="name" name="UserName" id="username" 
+                reguired 
+                class="main__input--one"
             </div>
             <div class='form__register-input-group input-control'>
                 <label>Email: </label>
-                <input type="email" name="email"  id="email" reguired 
-                onfocus="elementFocus(this)"
-                onblur="elementLostFocus(this)"
-                value="<?php echo $email; ?>">
-                <div class="error"></div>
+                <input type="email" name="Email" id="email" 
+                reguired 
+                class="main__input--one">
             </div>
             <div class='form__register-input-group input-control'>
                 <label for="password">Password: </label>
-                <input type="password"  name="password" id="password" reguired
-                onfocus="elementFocus(this)"
-                onblur="elementLostFocus(this)">
-                <div class="error"></div>
+                <input type="password"  name="Password" id="password" 
+                reguired
+                class="main__input--one">
+            </div>
+            <div class='form__register-input-group input-control'>
+                <label for="ConfirmPassword">Password: </label>
+                <input type="password"  name="ConfirmPassword" id="password" 
+                reguired
+                class="main__input--one">
             </div>
             <div class='form__register-input-btn'>
-                <input type="submit" name="submit_one" value="register" class="form__register-btn main__grafic--two">
+                <input type="submit" name="submit_one" value="register" 
+                class="form__register-btn main__button--one">
             </div>
             <div class='form__register-input-info'>
                 <p>Already member? <a href="login.php">Log In</a> </p>

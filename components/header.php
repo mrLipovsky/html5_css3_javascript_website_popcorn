@@ -5,17 +5,14 @@ Header
 <!-- NAV  -->
 <nav>
     <div class="nav__all">
-        <button class="nav__button-toggle"> 
-            <i class="fas fa-bars"></i>
-        </button>
         <div class="nav__left--shop">
             <a href=""><span>Shop</span></a>
         </div>
 
 <!-- nav header -->
 <!-- social media -->
-        <div class="nav__center--social">
-            <ul>
+        <div class="nav__center">
+            <ul class="nav__center--social">
                 <li>
                 <a href="https://www.twitter.com">
                     <i class="fab fa-facebook"></i>
@@ -43,38 +40,47 @@ Header
                 </li>
             </ul>
         
-        <div class="nav__center--logo">
-            <a href="index.php"> <h1>popcorn</h1>
+            <div id="cloud" class="nav__center--logo">
+                <a href="index.php"> <h1>popcorn</h1>
                 </a>
-        </div>
+            </div>
+            <div class="nav__center--toggle" id="js-navbar-toggle"> 
+                <i onclick="myFunction(this)" class="fas fa-bars" ></i>
+            </div>
         
     <!-- links -->
-        <div class="nav__center--menu show-nav__center--menu" id="nav-toggle">
-            <ul class="nav__center--menu ">
+            <ul class="nav__center--nav" id="js-menu">
                 <li>
-                    <a href="#shop"><span>Shop</span></a>
+                    <a 
+                    href="#shop" 
+                    class="nav__center--links"><span>Shop</span></a>
                 </li>
                 <li>
-                    <a href="#contact">contact</a>
+                    <a 
+                    href="#contact" 
+                    class="nav-links">contact</a>
                     
                 </li>
                 <li>
-                    <a href="#recipes">recipes</a>
+                    <a
+                    href="#recipes" 
+                    class="nav-links">recipes</a>
                 </li>
                 <li>
-                    <a href="#about">about</a>
+                    <a 
+                    href="#about" 
+                    class="nav-links">about</a>
                 </li>
             </ul>
         </div>
-    </div>
     <!-- login nav -->
-        <div class="nav__right--login">
-            <ul>
+        <div >
+            <ul class="nav__center--login" id="js-menu-login">
                 <li>
-                    <a href="./login.php">log in</a>
+                    <a href="./login.php" class="nav-links">log in</a>
                 </li>
                 <li>
-                    <a href="./register.php">sing up</a>
+                    <a href="./register.php" class="nav-links">sing up</a>
                 </li>
             </ul>
         </div>    

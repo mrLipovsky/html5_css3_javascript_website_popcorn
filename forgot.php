@@ -13,6 +13,7 @@
     <title>Popcorn login</title>
 </head>
 <body>
+
 <!-- =============== 
 Header
 ===============  -->
@@ -23,29 +24,37 @@ Header
 Login Form
 ===============  -->
 <section>
-    <form id="form__login" class="form__login" method="POST" action="./auth/check_login.php">
-    <h1>Login</h1>
+    <form id="form__login" class="form__login" method="POST"action="./upadte_password.php">
     <!-- display validation error here-->
+    <h1>Reset password</h1>
         <div class='form__login-input-group'>
             <label>Email: </label>
-            <input  type="text" name="Email" reguired 
+            <input 
+            type="email" 
+            name="email"  
+            reguired 
             class="main__input--one"
         </div>
         <div class='form__login-input-group'>
             <label>Password: </label>
-            <input type="password" name="Password" required 
+            <input 
+            type="text" 
+            name="password" 
+            required 
             class="main__input--one"
             >
         </div>
         <div class='form__register-input-btn '>
-            <input type="submit" name="submit_two" value="login" class="form__login-btn main__button--one">
+        <input 
+            type="submit" 
+            name="submit_two" 
+            value="reset" 
+            class="form__login-btn main__button--one">
         </div>
         <div class='form__register-input-info'>
-            <p>Not yet member: 
-                <a href="./register.php">Sign up</a></p>
+            <p>Not yet member: <a href="./register.php">Sign up</a></p>
             <br>
-            <p>
-                <a href="./forgot.php">Reset password up</a></p>
+            <p><a href="./auth/forgot.php">Reset password up</a></p>
         </div>
     </form>  
 </section>
