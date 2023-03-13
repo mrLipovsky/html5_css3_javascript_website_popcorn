@@ -15,14 +15,14 @@ if(isset($_POST["submit"]))
     $confirmationPassword = $_POST["confirmationPassword"];
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
-    if(isset($userName) && isset($password) && !empty($confirmationPassword) && !empty($firstName) && !empty($lastName) 
-    && !isset($userName) && isset($password) && !empty($confirmationPassword) && !empty($firstName) && !empty($lastName))
+    if(isset($userName) && isset($password) && isset($confirmationPassword) && isset($firstName) && isset($lastName)
+    && !empty($userName) && !empty($password) && !empty($confirmationPassword) && !empty($firstName) && !empty($lastName))
     {
         $signer = new Signer($sonnection);
         $signer -> add_user($userName, $password, $confirmationPassword, $firstName, $lastName);
-    }
+    }   
 } 
 
-header("Location: /../shopping_cart/cart.php");
+header("Location: /../shopping_cart/products.php");
 
 ?>

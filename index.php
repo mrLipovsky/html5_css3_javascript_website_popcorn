@@ -96,8 +96,11 @@ include "./components/header.php";
 <!-- =============== 
 popcor
 ===============  -->
-<div class="popcorn_seed_one"></div>
-<div class="popcorn_seed_two"></div>
+<div class="popcorn__seed--one"></div>
+<div class="popcorn__seed--two"></div>
+<div class="popcorn__seed--three"></div>
+<div class="popcorn__seed--four"></div>
+<div class="popcorn__seed--five"></div>
 
 <!-- =============== 
 sections main
@@ -111,7 +114,7 @@ sections main
         </p>
         <div class="main__article--buttons">
             <button class="main__button--one">
-                <span>Shop</span>
+                <a href="../shopping_cart/products.php"><span>Shop</span></a>
             </button>
             <button class="main__button--two"> Contact</button>
         </div>
@@ -130,10 +133,10 @@ section motto
         <img class="section__motto--img" src="./img/popcorn_backround.png" alt="popcorn">
         <div class="section__motto--text">
             <h3>
-                Powerfull and simle online ordering
+                Simle popcorn
             </h3>
             <p>
-                A popcorn kernel's strong hull contains the seed's hard, starchy shell endosperm with 14–20% moisture, which turns to steam as the kernel is heated.      
+                Making popcorn from scratch can be tricky. Not only do you want as many kernels as possible to pop, but you also want to keep the kernels from burning at the bottom of the pan!            
             </p>
         </div>
     </div>
@@ -161,7 +164,7 @@ section motto
 sections contact 
 ===============  -->
 <section class="section__contact">
-    <h1 class="section__contact--menu main__grafic--one" >
+    <h1 id="contact" class="section__contact--menu main__grafic--one" >
         Contact
     </h1>
     <div class="section__contact--text">

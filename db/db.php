@@ -1,9 +1,7 @@
 <?PHP
-session_start();
-
 require_once(__DIR__."/../db/db.php");
 
-global $mysqli;
+// global $mysqli;
 
 $servername = 'localHost';
 $username = 'web_user';
@@ -11,13 +9,16 @@ $password = 'heslo';
 $database = 'registration';
 
 //Register form Connect to DB
-$connection = mysqli_connect($servername, $username, $password, $database) or die('bad connection: '.mysqli_connect_error());
+$connection = new mysqli($servername, $username, $password, $database); 
 
-if ($connection -> connect_errno) {
-    echo "Failed to connect to MySQL: " . $connection -> connect_error;
-    exit();
-  }
-  echo "Connect Successfully. Host info: " . mysqli_get_host_info($connection);
+
+// or die('bad connection: '.mysqli_connect_error());
+
+// if ($connection -> connect_errno) {
+//     echo "Failed to connect to MySQL: " . $connection -> connect_error;
+//     exit();
+//   }
+//   echo "Connect Successfully. Host info: " . mysqli_get_host_info($connection);
 
 
 // // receive all input values from the form by press input button

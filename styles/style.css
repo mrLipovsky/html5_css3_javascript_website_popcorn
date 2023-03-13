@@ -231,7 +231,7 @@ JS MENU NAV
 
 .logo:hover,
 .nav__center--links:hover {
-  color: rgba(255, 255, 255, 1);
+  color: rgb(255, 255, 255);
 }
 
 /* 
@@ -294,7 +294,6 @@ border-radius: var(--border-radius);
 sections main
 =============== 
 */
-
 .main__article {
     color: var(--clr-grey-1);
     align-items: center;
@@ -321,7 +320,6 @@ sections main
 sections motto
 =============== 
 */
-
 .section__motto {
   background: var(--clr-background);
   color: var(--clr-grey-1);
@@ -382,12 +380,9 @@ sections motto
 sections contact 
 ===============  
 */
-
 .section__contact--menu{
   margin: var(--margine);
 }
-
-
 .section__contact {
   flex-direction: column;
   font-family: var(--ff-secondary);
@@ -434,12 +429,9 @@ footer {
   width:100%;
   height:60px; /* Height of the footer */
 }
-
-
 .copyright {
   font-weight: bold;
 }
-
 .social-icons {
   display: flex;
   flex-direction: row;
@@ -451,118 +443,116 @@ footer {
 Animation
 ===============   
 */
-
 .popcorn__seed--one {
   position: absolute;
-  background: white url(./img/popcorn_seed.png);
+  background: url(../img/popcorn_seed.png);
   width: 50px; 
   height: 50px;
   background-size: cover;
   border-top-left-radius: 10rem;
-  left: 5rem;
-  top: 15rem;
+  left: 15rem;
+  top: 10rem;
+  z-index: 99999;
 }
 
 .popcorn__seed--one:hover {
-  background: white url(./img/popcorn_2.png);
+  background: white url(../img/popcorn_2.png);
   width: 50px; 
   height: 50px;
   background-size: cover;
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transition-delay: 900ms;
+  z-index: 99999;
 }
 
 .popcorn__seed--two {
   position: absolute;
-  background: white url(./img/popcorn_seed.png);
+  background: url(../img/popcorn_seed.png);
   width: 50px; 
   height: 50px;
   background-size: cover;
-  right: 10rem;
-  top: 10rem;
+  right: 30rem;
+  top: 20rem;
   transform: rotate(45deg);
+  z-index: 99999;
 }
 
 .popcorn__seed--two:hover {
   position: absolute;
-  background: url(./img/popcorn_3.png);
+  background: url(../img/popcorn_3.png);
   width: 50px; 
   height: 50px;
   background-size: cover;
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transition-delay: 900ms;
+  z-index: 99999;
 }
 
 .popcorn__seed--three {
   position: absolute;
-  background: url(./img/popcorn_seed.png);
+  background: url(../img/popcorn_seed.png);
   width: 50px; 
   height: 50px;
   background-size: cover;
-  right: 20rem;
+  right: 25rem;
   top: 40rem;
   transform: rotate(45deg);
+  z-index: 99999;
 }
 
-/* 
-======= 
-HEAD
-======= 
-*/
 .popcorn__seed--three:hover {
   position: absolute;
-  background: url(./img/popcorn_3.png);
+  background: url(../img/popcorn_3.png);
   width: 50px; 
   height: 50px;
   background-size: cover;
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transition-delay: 900ms;
+  z-index: 99999;
 }
-
 .popcorn__seed--four {
   position: absolute;
-  background: url(./img/popcorn_seed.png);
+  background: url(../img/popcorn_seed.png);
   width: 50px; 
   height: 50px;
   background-size: cover;
-  left: 18rem;
-  top: 80rem;
+  right:60rem;
+  bottom: 16rem;
   transform: rotate(45deg);
+  z-index: 99999;
 }
 
 .popcorn__seed--four:hover {
   position: absolute;
-  background: url(./img/popcorn_3.png);
+  background: url(../img/popcorn_3.png);
   width: 50px; 
   height: 50px;
   background-size: cover;
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transition-delay: 900ms;
+  z-index: 99999;
 }
 
 .popcorn__seed--five {
   position: absolute;
-  background: url(./img/popcorn_seed.png);
+  background: url(../img/popcorn_seed.png);
   width: 50px; 
   height: 50px;
   background-size: cover;
   right: 12rem;
-  top: 60rem;
+  bottom: 6rem;
   transform: rotate(45deg);
 }
 
 .popcorn__seed--five:hover {
   position: absolute;
-  background: url(./img/popcorn_3.png);
+  background: url(../img/popcorn_3.png);
   width: 50px; 
   height: 50px;
   background-size: cover;
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transition-delay: 900ms;
 }
-
-
-
 
 @keyframes shake {
   10%, 90% {

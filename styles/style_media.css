@@ -3,7 +3,9 @@
 Media
 =============== */
 
-/* For Mobile Phone */
+/* 
+For Mobile Phone 
+*/
 @media only screen and (max-width: 767px) {
 
 body {
@@ -99,6 +101,10 @@ main {
   margin: 0;
 }
 
+html{
+    font-size: 50%;
+}
+
 /* 
 =============== 
 JS MENU NAV
@@ -141,7 +147,10 @@ header .nav__center--logo a h1{
   text-align: center;
   margin: 0 2rem;
 }
-
+.header__cart {
+  display: flex;
+  justify-content: space-between;
+}
 }   
 
 /* 
@@ -177,12 +186,12 @@ footer .fab, .far, .fas{
   font-size: 1rem;
 }
 
-
 .nav__center--social > ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-between
+  justify-content: space-between;
 } 
+
 .nav__all {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -224,49 +233,52 @@ footer .nav__center--logo a h1 {
   align-items: center;
   display: flex;
   flex-direction: column;
-
 }
-  .main__article--img {
-    max-width: 40%;
-    padding: 2rem 0;
-  }
-  .main__article--text p {
-    text-align: left;
-  }
+.main__article--img {
+  max-width: 40%;
+  padding: 2rem 0;
+}
+.main__article--text p {
+  text-align: left;
+}
 
-  .main__button--one, 
-  .main__button--two {
-    margin: .5rem;
-  }
+.main__button--one, 
+.main__button--two {
+  margin: .5rem;
+}
 
-  .section__motto{
-    flex-direction: column;
-  }
-  .section__motto--text {
-    border: none;
-    text-align: center;
-  }
-  
-  
-  .cookies-text {
-    font-size: .8rem;
-    width: 95%;
-    }
-    .cookie-subtitle {
-    font-size: .8rem;
-    color: #444;
-    margin: 0;
-    }
+.section__motto{
+  flex-direction: column;
+}
+.section__motto--text {
+  border: none;
+  text-align: center;
+}
+.cookies-text {
+  font-size: .8rem;
+  width: 95%;
+}
+.cookie-subtitle {
+  font-size: .8rem;
+  color: #444;
+  margin: 0;
+}
 
-    .nav__center--toggle {
-      display: none;
-    }
-  }    
-
+.nav__center--toggle {
+  display: none;
+}
 /* 
-
+Shop header 
+*/
+.header__cart {
+  display: flex;
+  justify-content: space-between;
+}
+}
+/* 
+=============
 For Desctop 
-
+=============
 */
 @media screen and (min-width: 1023px){
   .main__article, 
@@ -308,12 +320,16 @@ For Desctop
   footer .fab, .far, .fas{
     font-size: 1rem;
   }
-  
-  
+  header .nav__center--logo a h1{
+    font-size: 3rem;
+  }
+  footer .nav__center--logo a h1 {
+    font-size: 2rem;
+  }
   .nav__center--social > ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-between
+    justify-content: space-between;
   } 
   .nav__all {
     display: grid;
@@ -343,41 +359,34 @@ For Desctop
   .main__article--text {
     margin: 2rem ;
   }
-  header .nav__center--logo a h1{
-    font-size: 3rem;
+  .nav__center--login,
+  .nav__left--shop {
+    margin: 0 2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
-  footer .nav__center--logo a h1 {
-    font-size: 2rem;
+  .main__article--img {
+      max-width: 40%;
+      padding: 2rem 0;
   }
-  
-.nav__center--login,
-.nav__left--shop {
-  margin: 0 2rem;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-.main__article--img {
-    max-width: 40%;
-    padding: 2rem 0;
-}
-.main__article--text p {
-  text-align: left;
-}
+  .main__article--text p {
+    text-align: left;
+  }
 
-.main__button--one, 
-.main__button--two {
-    margin: .5rem;
+  .main__button--one, 
+  .main__button--two {
+      margin: .5rem;
+    }
+    
+  .section__motto{
+    flex-direction: column;
   }
-  
-.section__motto{
-  flex-direction: column;
-}
 
-.section__motto--text {
-  border: none;
-  text-align: center;
-}
+  .section__motto--text {
+    border: none;
+    text-align: center;
+  }
 
 .cookies-text {
   font-size: .8rem;
@@ -389,10 +398,25 @@ For Desctop
   margin: 0;
   }
 
-  .nav__center--toggle {
-    display: none;
+.nav__center--toggle {
+  display: none;
+}
+
+/* 
+Shop header 
+*/
+  .shopping-cart{
+    overflow-x: scroll;
   }
-}    
+  
+  .shopping-cart table{
+    width: 120rem;
+  }
+  .header__cart {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
 /*    
   .nav__center--logo {

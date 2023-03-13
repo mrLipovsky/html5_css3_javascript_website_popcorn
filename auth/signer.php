@@ -2,12 +2,13 @@
 
 require_once(__DIR__."/isigner.php");
 require_once(__DIR__."/crypt.php");
+require_once(__DIR__."/../db/db.php");
 
 
 class Signer implements ISigner
 {
-
     private mysqli $connection;
+    // protected mysqli $connection;
     private const TABLE_NAME = "users";
     private Crypt $crypt;
 
@@ -25,7 +26,6 @@ class Signer implements ISigner
             $sql = " INSERT INTO ".self::TABLE_NAME."(userName, password, firstName, lastName)VALUES('$userName', '$enc_password', '$firstName', '$lastName')";
             if($this -> connection -> query($sql))
             {
-                echo "connection ok";
                 throw new Exception("Adding new user crashed");
             }
         }
@@ -39,7 +39,6 @@ class Signer implements ISigner
             $sql = " UPDATE ".self::TABLE_NAME." SET password = '$enc_password' WHERE userName = '$userName' ";
             if($this -> connection -> query($sql))
             {
-                echo "connection ok";
                 throw new Exception("User name update crashed");
             }
         }
@@ -50,7 +49,6 @@ class Signer implements ISigner
         $sql = " DELETE FROM ".self::TABLE_NAME." WHERE UserName = '$userName'";
             if($this -> connection -> query($sql))
             {
-                echo "connection ok";
                 throw new Exception("User deletion user crashed");
             }
     }

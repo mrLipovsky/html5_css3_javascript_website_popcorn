@@ -4,9 +4,7 @@
 
 <header class="header__cart">
       <a href="#">Popcorn Shop</a>
-      <nav class="header__cart--navbar">
-         <a href="products.php">Items</a>
-      </nav>
+      <a href="products.php">Items</a>
       <?php
          $select_rows = mysqli_query($conn, "SELECT * FROM cart") or die('query failed');
          $row_count = mysqli_num_rows($select_rows);

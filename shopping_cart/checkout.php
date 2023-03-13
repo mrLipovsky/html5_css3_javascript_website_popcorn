@@ -80,11 +80,11 @@ Header-cart menu
 include 'header-cart.php'; 
 ?>
 
-<div class="container">
-   <section class="checkout-form">
+<div class="checkout__form-container">
+   <section class="checkout__form">
       <h1 class="heading">complete your order</h1>
       <form action="" method="post">
-         <div class="display-order">
+         <div class="checkout__form-display-order">
             <?php
                $select_cart = mysqli_query($conn, "SELECT * FROM cart");
                $total = 0;
@@ -101,10 +101,10 @@ include 'header-cart.php';
                echo "<div class='display-order'><span>your cart is empty!</span></div>";
             }
             ?>
-            <span class="grand-total"> grand total : <?= $grand_total; ?>EUR </span>
+            <span class="checkout__form-grand-total"> grand total : <?= $grand_total; ?>EUR </span>
          </div>
          <div>
-            <div class="inputBox">
+            <div class="checkout__form-inputBox">
                <p>your name</p>
                <input 
                type="text" 
@@ -122,7 +122,7 @@ include 'header-cart.php';
                required
                class="main__input--one">
             </div>
-            <div class="inputBox">
+            <div class="checkout__form-inputBox">
                <p>your email</p>
                <input 
                type="email" 
@@ -131,14 +131,14 @@ include 'header-cart.php';
                required
                class="main__input--one">
             </div>
-            <div class="inputBox">
+            <div class="checkout__form-inputBox">
                <p>payment method</p>
                <select name="method">
                   <option value="cash on delivery" selected>cash on devlivery</option>
                   <option value="pick up in shop">pick up in shop</option>
                </select>
             </div>
-            <div class="inputBox">
+            <div class="checkout__form-inputBox">
                <p>address line 1</p>
                <input 
                type="text" 
@@ -147,7 +147,7 @@ include 'header-cart.php';
                required
                class="main__input--one">
             </div>
-            <div class="inputBox">
+            <div class="checkout__form-inputBox">
                <p>address line 2</p>
                <input 
                type="text" 
@@ -156,7 +156,7 @@ include 'header-cart.php';
                required
                class="main__input--one">
             </div>
-            <div class="inputBox">
+            <div class="checkout__form-inputBox">
                <p>city</p>
                <input 
                type="text"
@@ -165,7 +165,7 @@ include 'header-cart.php';
                required
                class="main__input--one">
             </div>
-            <div class="inputBox">
+            <div class="checkout__form-inputBox">
                <p>state</p>
                <input 
                type="text" 
@@ -174,7 +174,7 @@ include 'header-cart.php';
                required
                class="main__input--one">
             </div>
-            <div class="inputBox">
+            <div class="checkout__form-inputBox">
                <p>country</p>
                <input 
                type="text"
@@ -183,7 +183,7 @@ include 'header-cart.php';
                required
                class="main__input--one">
             </div>
-            <div class="inputBox">
+            <div class="checkout__form-inputBox">
                <p>post code</p>
                <input 
                type="text" 
