@@ -3,7 +3,6 @@
 require_once(__DIR__."/crypt.php");
 require_once(__DIR__."/iauth.php");
 
-
 class Auth implements IAuth   
 {
     private mysqli $connection;
@@ -20,11 +19,11 @@ class Auth implements IAuth
         $sql = " SELECT * FROM ".self::TABLE_NAME." WHERE userName = '$userName' AND password = '$enc_password'";
         $res = $this -> connection -> query($sql);
         if($res -> num_rows === 0){
-            echo "chyba checkuser";
             return false;
         }
         return true;
     }
+
     public function logout() : void
     {
         session_start();
@@ -42,6 +41,13 @@ class Auth implements IAuth
         unset($_COOKIES["name"]);
         unset($_COOKIES["heslo"]);
     }
+
+    
+    // public function remember_user() : void
+    // {
+      
+    // }
+
 }
 
 

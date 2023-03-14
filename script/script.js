@@ -84,3 +84,15 @@ const validateInputs = () => {
 };
 // JS FORM VALIDATION END //
 
+
+// ASYNC PREPARE DATE FOR DB
+
+function prepareDateForDatabase(date)
+{ 
+  return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getMinutes()}:${date.getSecond()})`
+}
+
+function prepareDateForDisplaying(date)
+{
+  return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+}

@@ -1,7 +1,6 @@
 <?PHP
-require_once(__DIR__."/../db/db.php");
 
-// global $mysqli;
+global $mysqli;
 
 $servername = 'localHost';
 $username = 'web_user';
@@ -9,7 +8,7 @@ $password = 'heslo';
 $database = 'registration';
 
 //Register form Connect to DB
-$connection = new mysqli($servername, $username, $password, $database); 
+$connection =  mysqli_connect($servername, $username, $password, $database); 
 
 
 // or die('bad connection: '.mysqli_connect_error());

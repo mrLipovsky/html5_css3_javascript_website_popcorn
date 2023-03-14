@@ -28,13 +28,17 @@ Login Form
         <div class='form__login-input-group'>
             <label>Email: </label>
             <input  type="text" name="userName" reguired 
-            class="main__input--one"
+            class="main__input--one">
         </div>
         <div class='form__login-input-group'>
             <label>Password: </label>
             <input type="password" name="password" required 
-            class="main__input--one"
-            >
+            class="main__input--one">
+        </div>
+        <div class='form__register-input-group input-control'>
+            <label for="remember">Remember me: </label>
+            <input type="radio"  name="remember" id="remember" 
+            class="">
         </div>
         <div class='form__register-input-btn '>
             <input type="submit" name="submit" value="login" class="form__login-btn main__button--one">

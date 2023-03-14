@@ -29,7 +29,7 @@ Register Form
     class="form__register"
     method="POST" 
     action="./auth/check_signup.php">
-    <h1>Sign in</h1>
+    <h1>Sign up</h1>
     <!-- display validation error here-->
             <div class='form__register-input-group input-control'>
                 <label for="userName">Email: </label>

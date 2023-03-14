@@ -29,6 +29,7 @@ class UserRepository extends Repository
                 $output -> password = $row["password"];
                 $output -> firstName = $row["firstName"];
                 $output -> lastName = $row["lastName"];
+                $output -> remember = $row["remember"];
             }
         } else {
             echo "0 result";

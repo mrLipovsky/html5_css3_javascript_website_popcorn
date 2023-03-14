@@ -11,12 +11,10 @@ class Crypt implements ICrypt
 
     public function decrypt(string $password) : string
     {
-        echo 'Password decrypted';
         return openssl_decrypt($password, $this -> ciphering, $this -> key, $this -> options,$this -> iv);
     }
     public function encrypt(string $password) : string
     {
-        echo "password encrypted";
         return openssl_encrypt($password, $this -> ciphering, $this -> key, $this -> options,$this -> iv);
     }
 }

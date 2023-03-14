@@ -6,6 +6,7 @@ class User{
     public string $password;
     public string $firstName;
     public string $lastName;
+    public bool $remember;
 }
 
 ?>
