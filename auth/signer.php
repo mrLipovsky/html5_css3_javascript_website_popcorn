@@ -30,9 +30,9 @@ class Signer implements ISigner
         }
     }
 
-    public function update_user(string $userName,string $newPassword, string $confirmNewPassword) :void
+    public function update_user(string $userName,string $newPassword, string $confirmationPassword) :void
     {
-        if($newPassword === $confirmNewPassword)
+        if($newPassword === $confirmationPassword)
         {
             $enc_password = $this -> crypt -> encrypt($newPassword);
             $sql = " UPDATE ".self::TABLE_NAME." SET password = '$enc_password' WHERE userName = '$userName' ";

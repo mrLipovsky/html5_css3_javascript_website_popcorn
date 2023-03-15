@@ -82,6 +82,16 @@ Header
                 <li>
                     <a href="../register.php" class="nav-links">sign up</a>
                 </li>
+                <li>
+                <?php 
+                    $result = $connection->query("SELECT * FROM users");
+                 while ($row = $result->fetch_assoc()) {
+                        if ($row['admin'] == "admin") {
+                            echo "<a href='logout.php'>`$row['userName']` log out</a>";
+                        } 
+                    }
+                ?> 
+                </li>
             </ul>
         </div>    
 </nav>
