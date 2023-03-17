@@ -1,6 +1,6 @@
 <?PHP
 
-require_once(__DIR__."/icrypt.php");
+require_once(__DIR__."/../interface/icrypt.php");
 
 class Crypt implements ICrypt   
 {

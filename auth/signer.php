@@ -1,6 +1,6 @@
 <?PHP 
 
-require_once(__DIR__."/isigner.php");
+require_once(__DIR__."/../interface/isigner.php");
 require_once(__DIR__."/crypt.php");
 require_once(__DIR__."/../db/db.php");
 
@@ -17,12 +17,12 @@ class Signer implements ISigner
         $this -> crypt = new Crypt();
     }
 
-    public function add_user(string $userName,string $password, string $confirmationPassword, string $firstName, string $lastName) : void
+    public function add_user(string $userName,string $password, string $confirmationPassword, string $firstName, string $lastName, string $admin) : void
     {
         if($password === $confirmationPassword)
         {
             $enc_password = $this -> crypt -> encrypt($password);
-            $sql = " INSERT INTO ".self::TABLE_NAME."(userName, password, firstName, lastName)VALUES('$userName', '$enc_password', '$firstName', '$lastName')";
+            $sql = " INSERT INTO ".self::TABLE_NAME."(userName, password, firstName, lastName, admin)VALUES('$userName', '$enc_password', '$firstName', '$lastName','$admin')";
             if($this -> connection -> query($sql))
             {
                 throw new Exception("Adding new user crashed");
@@ -30,9 +30,9 @@ class Signer implements ISigner
         }
     }
 
-    public function update_user(string $userName,string $newPassword, string $confirmationPassword) :void
+    public function update_user(string $userName,string $newPassword, string $confirmNewPassword) :void
     {
-        if($newPassword === $confirmationPassword)
+        if($newPassword === $confirmNewPassword)
         {
             $enc_password = $this -> crypt -> encrypt($newPassword);
             $sql = " UPDATE ".self::TABLE_NAME." SET password = '$enc_password' WHERE userName = '$userName' ";
@@ -51,6 +51,7 @@ class Signer implements ISigner
                 throw new Exception("User deletion user crashed");
             }
     }
+
 
 }
 

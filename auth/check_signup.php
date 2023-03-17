@@ -14,11 +14,11 @@ if(isset($_POST["submit"]))
     $confirmationPassword = $_POST["confirmationPassword"];
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
-    if(isset($userName) && isset($password) && isset($confirmationPassword) && isset($firstName) && isset($lastName) 
-    && !empty($userName) && !empty($password) && !empty($confirmationPassword) && !empty($firstName) && !empty($lastName))
+    if(isset($userName) && isset($password) && isset($confirmationPassword) && isset($firstName) && isset($lastName) && isset($admin)
+    && !empty($userName) && !empty($password) && !empty($confirmationPassword) && !empty($firstName) && !empty($lastName) && !empty($admin))
     {
         $signer = new Signer($connection);
-        $signer -> add_user($userName, $password, $confirmationPassword, $firstName, $lastName);
+        $signer -> add_user($userName, $password, $confirmationPassword, $firstName, $lastName, $admin);
     }   
 } 
 

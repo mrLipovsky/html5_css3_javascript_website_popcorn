@@ -2,14 +2,15 @@
 
 require_once(__DIR__."/../db/db.php");
 
-if(isset($_POST['add_product'])){
+if(isset($_POST['add_product']))
+{
    $p_name = $_POST['p_name'];
    $p_price = $_POST['p_price'];
    $p_image = $_FILES['p_image']['name'];
    $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
-   $p_image_folder = 'uploaded_img/'.$p_image;
+   $p_image_folder = '../uploaded_img/'.$p_image;
 
-   $insert_query = mysqli_query($conn, "INSERT INTO `products`(name, price, image) VALUES('$p_name', '$p_price', '$p_image')") or die('query failed');
+   $insert_query = mysqli_query($connection, "INSERT INTO `products`(name, price, image) VALUES('$p_name', '$p_price', '$p_image')") or die('query failed');
 
    if($insert_query){
       move_uploaded_file($p_image_tmp_name, $p_image_folder);
@@ -19,7 +20,8 @@ if(isset($_POST['add_product'])){
    }
 };
 
-if(isset($_GET['delete'])){
+if(isset($_GET['delete']))
+{
    $delete_id = $_GET['delete'];
    $delete_query = mysqli_query($conn, "DELETE FROM `products` WHERE id = $delete_id ") or die('query failed');
    if($delete_query){
@@ -31,17 +33,19 @@ if(isset($_GET['delete'])){
    };
 };
 
-if(isset($_POST['update_product'])){
+if(isset($_POST['update_product']))
+{
    $update_p_id = $_POST['update_p_id'];
    $update_p_name = $_POST['update_p_name'];
    $update_p_price = $_POST['update_p_price'];
    $update_p_image = $_FILES['update_p_image']['name'];
    $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
-   $update_p_image_folder = 'uploaded_img/'.$update_p_image;
+   $update_p_image_folder = '../uploaded_img/'.$update_p_image;
 
    $update_query = mysqli_query($conn, "UPDATE `products` SET name = '$update_p_name', price = '$update_p_price', image = '$update_p_image' WHERE id = '$update_p_id'");
 
-   if($update_query){
+   if($update_query)
+   {
       move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
       $message[] = 'product updated succesfully';
       header('Location: admin.php');
@@ -128,14 +132,14 @@ Header-cart menu
          </thead>
          <tbody>
             <?php
-               $select_products = mysqli_query($conn, "SELECT * FROM `products`");
+               $select_products = mysqli_query($connection, "SELECT * FROM `products`");
                if(mysqli_num_rows($select_products) > 0){
                while($row = mysqli_fetch_assoc($select_products)){
             ?>
             <tr>
-               <td><img src="uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
+               <td><img src="../uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
                <td><?php echo $row['name']; ?></td>
-               <td>$<?php echo $row['price']; ?>/-</td>
+               <td><?php echo $row['price']; ?>EUR</td>
                <td>
                   <a href="admin.php?delete=<?php echo $row['id']; ?>" class="delete-btn" onclick="return confirm('are your sure you want to delete this?');"> <i class="fas fa-trash"></i> delete </a>
                   <a href="admin.php?edit=<?php echo $row['id']; ?>" class="option-btn"> <i class="fas fa-edit"></i> update </a>
@@ -159,7 +163,7 @@ Header-cart menu
             while($fetch_edit = mysqli_fetch_assoc($edit_query)){
       ?>
       <form action="" method="post" enctype="multipart/form-data">
-         <img src="uploaded_img/<?php echo $fetch_edit['image']; ?>" height="200" alt="">
+         <img src="../uploaded_img/<?php echo $fetch_edit['image']; ?>" height="200" alt="">
          <input 
          type="hidden" 
          name="update_p_id" 

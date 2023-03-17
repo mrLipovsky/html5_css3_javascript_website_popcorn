@@ -1,29 +1,14 @@
 <?PHP 
-session_start();
 // session_start();
-
-// require_once(__DIR__.'/dal/Repository.php');
-// require_once(__DIR__.'/db/db.php');
-// require_once(__DIR__.'/model/User.php');
-// require_once(__DIR__.'/dal/UsersRepository.php');
-// require_once(__DIR__.'/dal/GroupRepository.php');
-// require_once(__DIR__.'/dal/ItemRepository.php');
-// require_once(__DIR__.'/model/Group.php');
-// require_once(__DIR__.'/auth/crypt.php');
-// require_once(__DIR__.'/auth/auth.php');
-// require_once(__DIR__.'/login.php');
-
-// $auth = new Auth($connection);
-
-// if(!isset($_SESSION["email"]))
-// {
-//     header("Location: auth/login.php");
+// if (!empty($_SESSION["userName"])) {
+//     header("Location: ../login.php");
+//     session_destroy();
+// } else {
+//     // header("Location: ../index.php");
+//     // session_destroy();
 // }
 
-// if(!$auth -> check_user($_SESSION["name"], $_SESSION["heslo"]))
-// {
-//     header("Location: auth/login.php");
-// }
+
 // ssjhjjs
 
 // $repo = new ItemRepository($connection);
@@ -62,36 +47,13 @@ session_start();
     <link href="/styles/style_media.css" rel="stylesheet" media="screen">
     <title>popcorn website</title>
 </head>
-
 <body>
 <!-- =============== 
 Header
 ===============  -->
 <?php
-include "./components/header.php";
+    include "../web_popcorn/components/header.php";
 ?>
-<!-- PHP FORM SUCCESS MESSAGE -->
-<div class="message__login--success">
-        <?php if (isset($_SESSION['success'])): ?>
-            <div class="message__login--text">
-                <h3>
-                    <?php 
-                        echo $_SESSION['success'];
-                        unset($_SESSION['success']);
-                    ?>
-                </h3>
-            </div>
-            
-        <?php endif  ?>
-        <?php if (isset($_SESSION['userName'])): ?>
-            <div class="message__login--text">
-            <p>Welcome <strong><?php echo $_SESSION['userName']?></strong> you are log in.</p>
-            <p><a href="index.php?logout='1'" style="color:red;"> &nbsp Logout</a></p>
-            </div>
-        <?php endif  ?>
-    </div>
-</div>
-
 
 <!-- =============== 
 popcor

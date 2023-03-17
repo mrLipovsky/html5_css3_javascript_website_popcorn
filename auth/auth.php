@@ -1,7 +1,7 @@
 <?PHP
 
 require_once(__DIR__."/crypt.php");
-require_once(__DIR__."/iauth.php");
+require_once(__DIR__."/../interface/iauth.php");
 
 class Auth implements IAuth   
 {
@@ -13,6 +13,7 @@ class Auth implements IAuth
         $this -> connection = $conn;
         $this -> crypt = new Crypt();
     }
+
     public function check_user(string $userName, string $password) : bool
     {
         $enc_password = $this -> crypt -> encrypt($password);
@@ -27,8 +28,8 @@ class Auth implements IAuth
     public function logout() : void
     {
         session_start();
-        setcookie("username", "", time() - 8640 *10);
-        unset($_COOKIES["username"]);
+        setcookie("userName", "", time() - 8640 *10);
+        unset($_COOKIES["userName"]);
 
         session_start();
         setcookie("password", "", time() - 8640 *10);
@@ -38,18 +39,19 @@ class Auth implements IAuth
         setcookie("remember", "", time() - 8640 *10);
         unset($_COOKIES["remember"]);
 
-        unset($_COOKIES["name"]);
-        unset($_COOKIES["heslo"]);
+        unset($_SESSION["userName"]);
+        unset($_SESSION["password"]);
+        unset($_SESSION["remember"]);
+
+        header("Location: ../index.php");
+        session_destroy();
     }
 
+}
     
     // public function remember_user() : void
     // {
-      
+
     // }
-
-}
-
-
 
 ?>

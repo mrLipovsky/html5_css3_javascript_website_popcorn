@@ -10,7 +10,7 @@
     <base href="/">
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
     <link rel="stylesheet" type="text/css" href="./styles/style_media.css">
-    <title>Popcorn login</title>
+    <title>Popcorn forgot</title>
 </head>
 <body>
 
@@ -24,22 +24,31 @@ Header
 Login Form
 ===============  -->
 <section>
-    <form id="form__login" class="form__login" method="POST"action="./upadte_password.php">
+    <form id="form__login" class="form__login" method="POST" action="./auth/update_password.php">
     <!-- display validation error here-->
     <h1>Reset password</h1>
         <div class='form__login-input-group'>
             <label>Email: </label>
             <input 
             type="email" 
-            name="email"  
+            name="userName"  
             reguired 
             class="main__input--one"
         </div>
         <div class='form__login-input-group'>
-            <label>Password: </label>
+            <label>Old password: </label>
             <input 
-            type="text" 
+            type="password" 
             name="password" 
+            required 
+            class="main__input--one"
+            >
+        </div>
+        <div class='form__login-input-group'>
+            <label>New password: </label>
+            <input 
+            type="password" 
+            name="confirmNewPassword" 
             required 
             class="main__input--one"
             >
@@ -47,14 +56,14 @@ Login Form
         <div class='form__register-input-btn '>
         <input 
             type="submit" 
-            name="submit_two" 
+            name="submit" 
             value="reset" 
             class="form__login-btn main__button--one">
         </div>
         <div class='form__register-input-info'>
             <p>Not yet member: <a href="./register.php">Sign up</a></p>
             <br>
-            <p><a href="./auth/forgot.php">Reset password up</a></p>
+            <p><a href="forgot.php">Reset password up</a></p>
         </div>
     </form>  
 </section>

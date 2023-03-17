@@ -22,26 +22,36 @@ Header
 Login Form
 ===============  -->
 <section>
-    <form id="form__login" class="form__login" method="POST" action="./auth/check_login.php">
+    <form id="form__login" class="form__login" method="POST" action="../auth/check_login.php">
     <h1>Login</h1>
     <!-- display validation error here-->
         <div class='form__login-input-group'>
             <label>Email: </label>
-            <input  type="text" name="userName" reguired 
+            <input  
+            type="text" 
+            name="userName" 
+            reguired 
             class="main__input--one">
         </div>
         <div class='form__login-input-group'>
             <label>Password: </label>
-            <input type="password" name="password" required 
+            <input 
+            type="password" 
+            name="password" 
+            required 
             class="main__input--one">
         </div>
-        <div class='form__register-input-group input-control'>
+        <!-- <div class='form__register-input-group input-control'>
             <label for="remember">Remember me: </label>
-            <input type="radio"  name="remember" id="remember" 
+            <input type="checkbox"  name="remember" id="remember" 
             class="">
-        </div>
+        </div> -->
         <div class='form__register-input-btn '>
-            <input type="submit" name="submit" value="login" class="form__login-btn main__button--one">
+            <input 
+            type="submit" 
+            name="submit" 
+            value="login" 
+            class="form__login-btn main__button--one">
         </div>
         <div class='form__register-input-info'>
             <p>Not yet member: 

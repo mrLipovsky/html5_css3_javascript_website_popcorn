@@ -1,3 +1,13 @@
+<!-- <?PHP
+require_once(__DIR__."/../auth/check_login.php");
+?>
+
+<link rel="stylesheet" href="../styles/style.css echo time(); ?>">
+ -->
+
+
+
+
 <!-- =============== 
 Header
 ===============  -->
@@ -76,24 +86,25 @@ Header
     <!-- login nav -->
         <div >
             <ul class="nav__center--login" id="js-menu-login">
+            <?php if (isset($_SESSION['userName'])): ?>
+                    <div class="message__login--text">
+                    <li>
+                        <p>You are logged in: <strong><?php echo $_SESSION['userName']?></strong></p>
+                    </li>
+                    <li>
+                        <a href="../logout.php"> log out </a>
+                    </li>
+                    </div>
+                <?php else : ?>
                 <li>
                     <a href="../login.php" class="nav-links">log in</a>
                 </li>
                 <li>
                     <a href="../register.php" class="nav-links">sign up</a>
                 </li>
-                <li>
-                <?php 
-                    $result = $connection->query("SELECT * FROM users");
-                 while ($row = $result->fetch_assoc()) {
-                        if ($row['admin'] == "admin") {
-                            echo "<a href='logout.php'>`$row['userName']` log out</a>";
-                        } 
-                    }
-                ?> 
-                </li>
+                <?php endif  ?>
             </ul>
         </div>    
 </nav>
-
+</div> 
 </header>

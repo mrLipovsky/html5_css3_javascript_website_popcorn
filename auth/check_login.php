@@ -12,38 +12,52 @@ if(isset($_POST["submit"]))
     $password = $_POST["password"];
     if(isset($userName) && isset($password) && !empty($userName) && !empty($password))
     {
+        if($auth -> check_user($userName, $password))
+        {
+            $_SESSION["userName"] = $userName;
+            $_SESSION["password"] = $password;
+            
+            header("Location: ../index.php");
+        } 
         // validator
         if(!empty($_POST["remember"]))
         {
             if(!isset($_COOKIE["remember"])){
-                setcookie("remember", 1, time() + 86400 * 10, "/"); // vyprsi za 10 dnu
+                setcookie("remember", 1, time() + 86400 * 10); // vyprsi za 10 dnu
             }
             
             if(!isset($_COOKIE["userName"])){
-                setcookie("userName", $userName, time() + 86400 * 10, "/"); // vyprsi za 10 dnu
+                setcookie("username", $userName, time() + 86400 * 10); // vyprsi za 10 dnu
             }
             
             if(!isset($_COOKIE["password"])){
-                setcookie("password", $password, time() + 86400 * 10, "/"); // vyprsi za 10 dnu
-            }
+                setcookie("password", $password, time() + 86400 * 10); // vyprsi za 10 dnu
+            } 
         }
-        if($auth -> check_user($userName, $password))
-        {
-            session_start();
-            $_SESSION["userName"] = $userName;
-            $_SESSION["password"] = $password;
-            header("Location: /../shopping_cart/products.php");
-        }
-        else{
-            header("Location: ../login.php");
-        }
+
+        // else {
+    //     if(empty($_POST["remember"]))
+    //     {
+    //         if(isset($_COOKIE["remember"])){
+    //            setcookie("remember", 1,  null, -1, '/'); // vyprsi za 10 dnu
+    //         }
+            
+    //         if(!isset($_COOKIE["userName"])){
+    //             setcookie("userName", $userName,  null, -1, '/'); // vyprsi za 10 dnu
+    //         }
+            
+    //         if(!isset($_COOKIE["password"])){
+    //             setcookie("password", $password,  null, -1, '/'); // vyprsi za 10 dnu
+    //         }
+    //     }
+    //     if($auth -> check_user($userName, $password))
+    //     {
+    //         session_start();
+    //         $_SESSION["userName"] = $userName;
+    //         $_SESSION["password"] = $password;
+    //         header("Location: ../index.php");
+    //     }
     }
-    else{
-        header("Location: ../login.php");
-    }
-}
-else{
-    header("Location: ../login.php");
 }
 
 

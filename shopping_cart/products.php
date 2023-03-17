@@ -36,7 +36,7 @@ require_once(__DIR__."/../db/db.php");
 Header
 ===============  -->
 <?php
-include "../components/header.php";
+   include "../components/header.php";
 ?>
 
 <!-- =============== 
@@ -67,7 +67,7 @@ Header-cart menu
          <form action="" method="post">
             <div class="section__products--box">
                <img 
-               src="uploaded_img/<?php echo $fetch_product['image']; ?>" alt="">
+               src="../uploaded_img/?php echo $fetch_product['image']; ?>" alt="">
                <h3><?php echo $fetch_product['name']; ?></h3>
                <div class="price"><?php echo $fetch_product['price']; ?>EUR</div>
                <input 
