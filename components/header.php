@@ -1,12 +1,6 @@
-<!-- <?PHP
+<?PHP
 require_once(__DIR__."/../auth/check_login.php");
 ?>
-
-<link rel="stylesheet" href="../styles/style.css echo time(); ?>">
- -->
-
-
-
 
 <!-- =============== 
 Header
@@ -16,7 +10,7 @@ Header
 <nav>
     <div class="nav__all">
         <div class="nav__left--shop">
-            <a href="../shopping_cart/products.php"><span>Shop</span></a>
+            <a href="../shopping_cart/items.php"><span>Shop</span></a>
         </div>
 
 <!-- nav header -->
@@ -62,7 +56,7 @@ Header
             <ul class="nav__center--nav" id="js-menu">
                 <li>
                     <a 
-                    href="../shopping_cart/products.php" 
+                    href="../shopping_cart/items.php" 
                     class="nav__center--links"><span>Shop</span></a>
                 </li>
                 <li>

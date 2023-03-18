@@ -4,55 +4,31 @@ require_once(__DIR__."/../db/db.php");
 
 if(isset($_POST['order_btn'])){
 
-   $name = $_POST['name'];
-   $number = $_POST['number'];
-   $email = $_POST['email'];
-   $method = $_POST['method'];
-   $flat = $_POST['flat'];
-   $street = $_POST['street'];
-   $city = $_POST['city'];
-   $state = $_POST['state'];
-   $country = $_POST['country'];
-   $pin_code = $_POST['post_code'];
+      $name = $_POST['name'];
+      $number = $_POST['number'];
+      $email = $_POST['email'];
+      $method = $_POST['method'];
+      $flat = $_POST['flat'];
+      $street = $_POST['street'];
+      $city = $_POST['city'];
+      $state = $_POST['state'];
+      $country = $_POST['country'];
+      $post_code = $_POST['post_code'];
 
-   $cart_query = mysqli_query($conn, "SELECT * FROM `cart`");
-   $price_total = 0;
-   if(mysqli_num_rows($cart_query) > 0){
-      while($product_item = mysqli_fetch_assoc($cart_query)){
-         $product_name[] = $product_item['name'] .' ('. $product_item['quantity'] .') ';
-         $product_price = number_format($product_item['price'] * $product_item['quantity']);
-         $price_total += $product_price;
+      $cart_query = mysqli_query($connection, "SELECT * FROM `cart`");
+      $price_total = 0;
+      if(mysqli_num_rows($cart_query) > 0){
+         while($product_item = mysqli_fetch_assoc($cart_query)){
+               $product_name[] = $product_item['name'] .' ('. $product_item['quantity'] .') ';
+               $product_price = number_format($product_item['price'] * $product_item['quantity']);
+               $price_total += $product_price;
+         };
       };
-   };
 
-   $total_product = implode(', ',$product_name);
-   $detail_query = mysqli_query($conn, "INSERT INTO `order`(name, number, email, method, flat, street, city, state, country, pin_code, total_products, total_price) VALUES('$name','$number','$email','$method','$flat','$street','$city','$state','$country','$pin_code','$total_product','$price_total')") or die('query failed');
-
-   if($cart_query && $detail_query){
-      echo"
-      <div class='order-message-container'>
-      <div class='message-container'>
-         <h3>thank you for shopping!</h3>
-         <div class='order-detail'>
-            <span>".$total_product."</span>
-            <span class='total'> total : $".$price_total."</span>
-         </div>
-         <div class='customer-details'>
-            <p> your name : <span>".$name."</span> </p>
-            <p> your number : <span>".$number."</span> </p>
-            <p> your email : <span>".$email."</span> </p>
-            <p> your address : <span>".$flat.", ".$street.", ".$city.", ".$state.", ".$country." - ".$pin_code."</span> </p>
-            <p> your payment mode : <span>".$method."</span> </p>
-            <p>(*pay when product arrives*)</p>
-         </div>
-            <a href='products.php' class='btn'>continue shopping</a>
-         </div>
-      </div>
-      ";
-   }
-
+      $total_product = implode(', ',$product_name);
+      $detail_query = mysqli_query($connection, "INSERT INTO `order`(name, number, email, method, flat, street, city, state, country, post_code, total_products, total_price) 
+      VALUES('$name','$number','$email','$method','$flat','$street','$city','$state','$country','$post_code','$total_product','$price_total')") or die('query failed');
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -73,11 +49,42 @@ Header
 <?php
    include "../components/header.php";
 ?>
+
+
 <!-- =============== 
 Header-cart menu
 ===============  -->
 <?php 
-include 'header-cart.php'; 
+   include '../components/header-cart.php'; 
+?>
+<?php
+if($cart_query && $detail_query){
+   echo "
+   <div class='order-message-container'>
+   <div class='message-container'>
+   <h3>thank you for shopping!</h3>
+   <div class='order-detail'>
+         <span>".$total_product."</span>
+         <span class='total'> total : $".$price_total."/-  </span>
+   </div>
+   <div class='customer-details'>
+         <p> your name : <span>".$name."</span> </p>
+         <p> your number : <span>".$number."</span> </p>
+         <p> your email : <span>".$email."</span> </p>
+         <p> your address : <span>".$flat.", ".$street.", ".$city.", ".$state.", ".$country." - ".$post_code."</span> </p>
+         <p> your payment mode : <span>".$method."</span> </p>
+         <p>(*pay when product arrives*)</p>
+   </div>
+         <a href='items.php' class='btn'>continue shopping</a>
+   </div>
+   </div>
+";
+}
+   if(isset($message)){
+      foreach($message as $message){
+         echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+      };
+   };
 ?>
 
 <div class="checkout__form-container">
@@ -86,7 +93,7 @@ include 'header-cart.php';
       <form action="" method="post">
          <div class="checkout__form-display-order">
             <?php
-               $select_cart = mysqli_query($conn, "SELECT * FROM cart");
+               $select_cart = mysqli_query($connection, "SELECT * FROM cart");
                $total = 0;
                $grand_total = 0;
                if(mysqli_num_rows($select_cart) > 0){
@@ -188,7 +195,7 @@ include 'header-cart.php';
                <input 
                type="text" 
                placeholder="e.g. 123456" 
-               name="pin_code" 
+               name="post_code" 
                required
                class="main__input--one">
                
