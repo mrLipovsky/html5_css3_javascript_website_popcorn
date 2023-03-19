@@ -1,36 +1,3 @@
-<?php
-
-require_once(__DIR__."/../db/db.php");
-
-if(isset($_POST['order_btn'])){
-
-      $name = $_POST['name'];
-      $number = $_POST['number'];
-      $email = $_POST['email'];
-      $method = $_POST['method'];
-      $flat = $_POST['flat'];
-      $street = $_POST['street'];
-      $city = $_POST['city'];
-      $state = $_POST['state'];
-      $country = $_POST['country'];
-      $post_code = $_POST['post_code'];
-
-      $cart_query = mysqli_query($connection, "SELECT * FROM `cart`");
-      $price_total = 0;
-      if(mysqli_num_rows($cart_query) > 0){
-         while($product_item = mysqli_fetch_assoc($cart_query)){
-               $product_name[] = $product_item['name'] .' ('. $product_item['quantity'] .') ';
-               $product_price = number_format($product_item['price'] * $product_item['quantity']);
-               $price_total += $product_price;
-         };
-      };
-
-      $total_product = implode(', ',$product_name);
-      $detail_query = mysqli_query($connection, "INSERT INTO `order`(name, number, email, method, flat, street, city, state, country, post_code, total_products, total_price) 
-      VALUES('$name','$number','$email','$method','$flat','$street','$city','$state','$country','$post_code','$total_product','$price_total')") or die('query failed');
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,166 +17,186 @@ Header
    include "../components/header.php";
 ?>
 
-
 <!-- =============== 
 Header-cart menu
 ===============  -->
 <?php 
    include '../components/header-cart.php'; 
 ?>
+
 <?php
-if($cart_query && $detail_query){
-   echo "
-   <div class='order-message-container'>
-   <div class='message-container'>
-   <h3>thank you for shopping!</h3>
-   <div class='order-detail'>
-         <span>".$total_product."</span>
-         <span class='total'> total : $".$price_total."/-  </span>
-   </div>
-   <div class='customer-details'>
-         <p> your name : <span>".$name."</span> </p>
-         <p> your number : <span>".$number."</span> </p>
-         <p> your email : <span>".$email."</span> </p>
-         <p> your address : <span>".$flat.", ".$street.", ".$city.", ".$state.", ".$country." - ".$post_code."</span> </p>
-         <p> your payment mode : <span>".$method."</span> </p>
-         <p>(*pay when product arrives*)</p>
-   </div>
-         <a href='items.php' class='btn'>continue shopping</a>
-   </div>
-   </div>
-";
-}
+// conect to db
+   require_once(__DIR__."/../db/db.php");
+
+   if(isset($_POST['order_btn']))
+   {
+      $name = $_POST['name'];
+      $number = $_POST['number'];
+      $email = $_POST['email'];
+      $method = $_POST['method'];
+      $street = $_POST['street'];
+      $city = $_POST['city'];
+      $country = $_POST['country'];
+      $post_code = $_POST['post_code'];
+
+      $cart_query = mysqli_query($connection, "SELECT * FROM `cart`");
+      $price_total = 0;
+
+      if(mysqli_num_rows($cart_query) > 0)
+      {
+         while($product_item = mysqli_fetch_assoc($cart_query))
+         {
+               $product_name[] = $product_item['name'] .' ('. $product_item['quantity'] .') ';
+               $product_price = number_format($product_item['price'] * $product_item['quantity']);
+               $price_total += $product_price;
+         };
+      };
+
+      $total_product = implode(', ',$product_name);
+      $detail_query = mysqli_query($connection, "INSERT INTO `order`(name, number, email, method, street, city, country, post_code, total_products, total_price) 
+      VALUES('$name','$number','$email','$method','$street','$city','$country','$post_code','$total_product','$price_total')") or die('query failed');
+
+// show order message sum
+   if($cart_query && $detail_query) 
+      {
+         echo"
+         <div class='checkout__message-container'>
+            <h4>thank you for order: </h4>
+            <div class='checkout__message'>
+               <p>your order: ".$total_product."</p>
+               <p>total to pay: ".$price_total." EUR</p>
+            </div>
+            <div class='checkout__message-customer-details'>
+                  <p> your name: ".$name." </p>
+                  <p> your number: ".$number." </p>
+                  <p> your email: ".$email." </p>
+                  <p> your address: ".$street.", ".$city.", ".$country." - ".$post_code." </p>
+                  <p> your payment mode: ".$method." </p>
+                  <p>(*pay when product arrives*)</p>
+            </div>
+            <div class='checkout__message-btn'>
+               <a href='items.php' class='main__button--one'>continue shopping</a>
+            </div>
+         </div>";
+      }
+   }
+
    if(isset($message)){
       foreach($message as $message){
-         echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> </div>';
+         echo '<div class="message"><p>'.$message.'</p> <ionclick="this.parentElement.style.display = `none`;"></i> </div>';
       };
    };
-?>
+   ?>
 
-<div class="checkout__form-container">
-   <section class="checkout__form">
-      <h1 class="heading">complete your order</h1>
-      <form action="" method="post">
-         <div class="checkout__form-display-order">
-            <?php
-               $select_cart = mysqli_query($connection, "SELECT * FROM cart");
-               $total = 0;
-               $grand_total = 0;
-               if(mysqli_num_rows($select_cart) > 0){
-                  while($fetch_cart = mysqli_fetch_assoc($select_cart)){
-                  $total_price = number_format($fetch_cart['price'] * $fetch_cart['quantity']);
-                  $grand_total = $total += $total_price;
-            ?>
-            <span><?= $fetch_cart['name']; ?>(<?= $fetch_cart['quantity']; ?>)</span>
-            <?php
-               }
-            }else{
-               echo "<div class='display-order'><span>your cart is empty!</span></div>";
+
+<section class="checkout__form">
+<h4>Your order sum: </h4>
+   <form action="" method="post">
+      <div class="checkout__form-display-order">
+         <?php
+            $select_cart = mysqli_query($connection, "SELECT * FROM cart");
+            $total = 0;
+            $grand_total = 0;
+            if(mysqli_num_rows($select_cart) > 0)
+            {
+               while($fetch_cart = mysqli_fetch_assoc($select_cart)){
+               $total_price = number_format($fetch_cart['price'] * $fetch_cart['quantity']);
+               $grand_total = $total += $total_price;
+
+               $name = $fetch_cart['name'];
+               $quantity = $fetch_cart['quantity'];
+   
+               echo "<p> your order: $name; $quantity x</p>";
             }
-            ?>
-            <span class="checkout__form-grand-total"> grand total : <?= $grand_total; ?>EUR </span>
+         } else
+         {
+            echo "<div class='checkout__form-display-order'><p>your cart is empty!</p></div>";
+         }
+         ?>
+         <p class="checkout__form-grand-total"> grand total: <?= $grand_total; ?>EUR </p>
+      </div>
+
+      <div>
+         <div class="checkout__form-input">
+            <p>full name</p>
+            <input 
+            type="text" 
+            placeholder="full name" 
+            name="name" 
+            required
+            class="main__input--one">
          </div>
-         <div>
-            <div class="checkout__form-inputBox">
-               <p>your name</p>
-               <input 
-               type="text" 
-               placeholder="name" 
-               name="name" 
-               required
-               class="main__input--one">
-            </div>
-            <div class="inputBox">
-               <p>your number</p>
-               <input 
-               type="number" 
-               placeholder="number" 
-               name="number" 
-               required
-               class="main__input--one">
-            </div>
-            <div class="checkout__form-inputBox">
-               <p>your email</p>
-               <input 
-               type="email" 
-               placeholder="enter your email"
-               name="email" 
-               required
-               class="main__input--one">
-            </div>
-            <div class="checkout__form-inputBox">
-               <p>payment method</p>
-               <select name="method">
-                  <option value="cash on delivery" selected>cash on devlivery</option>
-                  <option value="pick up in shop">pick up in shop</option>
-               </select>
-            </div>
-            <div class="checkout__form-inputBox">
-               <p>address line 1</p>
-               <input 
-               type="text" 
-               placeholder="e.g. flat no." 
-               name="flat" 
-               required
-               class="main__input--one">
-            </div>
-            <div class="checkout__form-inputBox">
-               <p>address line 2</p>
-               <input 
-               type="text" 
-               placeholder="e.g. street name" 
-               name="street" 
-               required
-               class="main__input--one">
-            </div>
-            <div class="checkout__form-inputBox">
-               <p>city</p>
-               <input 
-               type="text"
-               placeholder="e.g. mumbai" 
-               name="city" 
-               required
-               class="main__input--one">
-            </div>
-            <div class="checkout__form-inputBox">
-               <p>state</p>
-               <input 
-               type="text" 
-               placeholder="e.g. maharashtra" 
-               name="state" 
-               required
-               class="main__input--one">
-            </div>
-            <div class="checkout__form-inputBox">
-               <p>country</p>
-               <input 
-               type="text"
-               placeholder="e.g. india" 
-               name="country" 
-               required
-               class="main__input--one">
-            </div>
-            <div class="checkout__form-inputBox">
-               <p>post code</p>
-               <input 
-               type="text" 
-               placeholder="e.g. 123456" 
-               name="post_code" 
-               required
-               class="main__input--one">
-               
-            </div>
-            <div class="checkout__form--btn">
-               <input 
-               type="submit" 
-               value="order now" 
-               name="order_btn" 
-               class="main__button--one">
-            </div>
-      </form>
-   </section>
-</div>
+         <div class="checkout__form-input">
+            <p>phone number</p>
+            <input 
+            type="number" 
+            placeholder="phone number" 
+            name="number" 
+            required
+            class="main__input--one">
+         </div>
+         <div class="checkout__form-input">
+            <p>your email</p>
+            <input 
+            type="email" 
+            placeholder="enter your email"
+            name="email" 
+            required
+            class="main__input--one">
+         </div>
+         <div class="checkout__form-input">
+            <p>street and number</p>
+            <input 
+            type="text" 
+            placeholder="street and number" 
+            name="street" 
+            required
+            class="main__input--one">
+         </div>
+         <div class="checkout__form-input">
+            <p>city</p>
+            <input 
+            type="text"
+            placeholder="city" 
+            name="city" 
+            required
+            class="main__input--one">
+         </div>
+         <div class="checkout__form-input">
+            <p>country</p>
+            <input 
+            type="text"
+            placeholder="contry" 
+            name="country" 
+            required
+            class="main__input--one">
+         </div>
+         <div class="checkout__form-input">
+            <p>post code</p>
+            <input 
+            type="text" 
+            placeholder="post code" 
+            name="post code" 
+            required
+            class="main__input--one">
+         </div>
+         <div class="checkout__form-input">
+            <p>payment method</p>
+            <select name="method">
+               <option value="cash on delivery" selected>cash on delivery</option>
+               <option value="pick up in the shop">pick up in the shop</option>
+            </select>
+         </div>
+         <div class="checkout__form-btn">
+            <input 
+            type="submit" 
+            value="order now" 
+            name="order_btn" 
+            class="main__button--one">
+         </div>
+   </form>
+</section>
+
 
 <!-- =============== 
 Footer
@@ -219,7 +206,7 @@ Footer
 ?>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="../script/script-cart.js"></script>
    
 </body>
 </html>

@@ -54,10 +54,10 @@ Header-cart menu
    include '../components/header-cart.php'; 
 ?>
 
-<div class="container">
-   <section class="shopping__cart">
-      <h1>shopping cart</h1>
-      <table>
+<div class="section__cart">
+   <section class="section__cart--container">
+      <h4>shopping cart</h4>
+      <table class="section__cart--table">
             <th>image</th>
             <th>name</th>
             <th>price</th>
@@ -70,51 +70,50 @@ Header-cart menu
                if(mysqli_num_rows($select_cart) > 0){
                   while($fetch_cart = mysqli_fetch_assoc($select_cart)){
             ?>
-            <form action="" method="POST">
-            <tr>
-               <td>
-                  <img 
-                  src="../uploaded_img/<?php echo $fetch_cart['image']; ?>" 
-                  height="100" 
-                  alt="">
-               </td>
-               <td>
-                  <?php echo $fetch_cart['name']; ?>
-               </td>
-               <td>
-                  <?php echo number_format($fetch_cart['price']); ?>EUR
-               </td>
-               <td>
+            <form  class="section__cart--form" action="" method="POST">
+               <tr >
+                  <td>
+                     <img 
+                     src="../uploaded_img/<?php echo $fetch_edit['image']; ?>" 
+                     height="100" width="100"
+                     alt="">  
+                  </td>
+                  <td>
+                     <?php echo $fetch_cart['name']; ?>
+                  </td>
+                  <td>
+                     <?php echo number_format($fetch_cart['price']); ?> EUR
+                  </td>
+                  <td>
                      <input 
-                     type="hidden" 
-                     name="update_quantity_id"  
-                     value="<?php echo $fetch_cart['id']; ?>" 
-                     class="">
+                        type="hidden" 
+                        name="update_quantity_id"  
+                        value="<?php echo $fetch_cart['id']; ?>">
                      <input
-                     type="number" 
-                     name="update_quantity" 
-                     min="1"  
-                     value="<?php echo $fetch_cart['quantity']; ?>" 
-                     class="">
-               </td>
-               <td>
-                  <?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>EUR
-               </td>
-               <td>
-                  <input
-                     type="submit" 
-                     name="update_update_btn" 
-                     min="1"  
-                     value="update" 
-                     class="main__button--one">
+                        type="number" 
+                        name="update_quantity" 
+                        min="1"  
+                        value="<?php echo $fetch_cart['quantity']; ?>">
+                  </td>
+                  <td>
+                     <?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?> EUR
+                  </td>
+                  <td>
+                     <input
+                        type="submit" 
+                        name="update_update_btn" 
+                        min="1"  
+                        value="update" 
+                        class="main__button--one">
                      <a 
-                     href="shopping_cart.php?remove=<?php echo $fetch_cart['id']; ?>" 
-                     onclick="return confirm('remove item from cart?')" 
-                     class="main__button--one"> 
-                     remove</a>
-               </td>
-            </tr>
-            </form>   
+                        href="shopping_cart.php?remove=<?php echo $fetch_cart['id']; ?>" 
+                        onclick="return confirm('remove item from cart?')" 
+                        class="main__button--one"> 
+                        remove
+                     </a>
+                  </td>
+               </tr>
+            <!-- </form>    -->
             <?php
                $grand_total += $sub_total;  
             };
@@ -159,6 +158,6 @@ Footer
 ?>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="../scrypt/script-cart.js"></script>
 </body>
 </html>

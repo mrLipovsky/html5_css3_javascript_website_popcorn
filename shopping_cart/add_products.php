@@ -3,7 +3,6 @@
 require_once(__DIR__."/../auth/cart_admin.php");
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,10 +35,13 @@ Header-cart menu
 <?php 
    include '../components/header-cart.php'; 
 ?>
-<div class="container">
-   <section>
-      <form action="" method="post" class="add-product-form" enctype="multipart/form-data">
-         <h3>add a new product</h3>
+<section class="add__product--container">
+      <form 
+      action="" 
+      method="post" 
+      class="add__product--form" 
+      enctype="multipart/form-data">
+      <h4>latest products</h4>
          <input 
          type="text" 
          name="p_name" 
@@ -53,6 +55,7 @@ Header-cart menu
          placeholder="enter the product price" 
          class="main__input--one" 
          required>
+         <div class="add__product--btn">
          <input 
          type="file" 
          name="p_image" 
@@ -64,90 +67,117 @@ Header-cart menu
          value="add the product" 
          name="add_product" 
          class="main__button--one">
+         </div>
       </form>
-   </section>
+</section>
 
-   <section class="display-product-table">
-      <table>
-         <thead>
-            <th>product image</th>
-            <th>product name</th>
-            <th>product price</th>
-            <th>action</th>
-         </thead>
-         <tbody>
-            <?php
-               $select_products = mysqli_query($connection, "SELECT * FROM `products`");
-               if(mysqli_num_rows($select_products) > 0){
-               while($row = mysqli_fetch_assoc($select_products)){
-            ?>
-            <tr>
-               <td><img src="../uploaded_img/<?php echo $row['image']; ?>" height="100" alt=""></td>
-               <td><?php echo $row['name']; ?></td>
-               <td><?php echo $row['price']; ?>EUR</td>
-               <td>
-                  <a href="admin.php?delete=<?php echo $row['id']; ?>" class="delete-btn" onclick="return confirm('are your sure you want to delete this?');"> <i class="fas fa-trash"></i> delete </a>
-                  <a href="admin.php?edit=<?php echo $row['id']; ?>" class="option-btn"> <i class="fas fa-edit"></i> update </a>
-               </td>
-            </tr>
-            <?php
-               };    
-               }else{
-                  echo "<div class='empty'>no product added</div>";
-               };
-            ?>
-         </tbody>
-      </table>
-   </section>
-   <section class="edit-form-container">
-      <?php
-      if(isset($_GET['edit'])){
+<section class="add__product-display-table">
+   <table>
+      <thead>
+         <th>product image</th>
+         <th>product name</th>
+         <th>product price</th>
+         <th>action</th>
+      </thead>
+      <tbody>
+         <?php
+            $select_products = mysqli_query($connection, "SELECT * FROM `products`");
+            if(mysqli_num_rows($select_products) > 0){
+            while($row = mysqli_fetch_assoc($select_products)){
+         ?>
+         <tr>
+            <td>
+               <img 
+               src="../uploaded_img/<?php echo $row['image']; ?>" 
+               height="100" width="100">
+            </td>
+            <td>
+               <?php echo $row['name']; ?>
+            </td>
+            <td>
+               <?php echo $row['price']; ?>EUR
+            </td>
+            <td>
+               <a href="add_products.php?delete=<?php echo $row['id']; ?>" class="main__button--one"" onclick="return confirm('are your sure you want to delete this?');"> delete </a>
+               <a href="add_products.php?edit=<?php echo $row['id']; ?>" class="main__button--one"> update </a>
+            </td>
+         </tr>
+         <?php
+            };    
+            }else{
+               echo "<div class='empty'>no product added</div>";
+            };
+         ?>
+      </tbody>
+   </table>
+</section>
+
+<section class="update__product-form-container">
+   <?php
+      if(isset($_GET['edit']))
+      {
          $edit_id = $_GET['edit'];
-         $edit_query = mysqli_query($conn, "SELECT * FROM `products` WHERE id = $edit_id");
-         if(mysqli_num_rows($edit_query) > 0){
-            while($fetch_edit = mysqli_fetch_assoc($edit_query)){
-      ?>
-      <form action="" method="post" enctype="multipart/form-data">
-         <img src="../uploaded_img/<?php echo $fetch_edit['image']; ?>" height="200" alt="">
+         $edit_query = mysqli_query($connection, "SELECT * FROM `products` WHERE id = $edit_id");
+         if(mysqli_num_rows($edit_query) > 0)
+         {
+            while($fetch_edit = mysqli_fetch_assoc($edit_query))
+            {
+   ?>
+   <form 
+      action="" 
+      method="post" 
+      class="update__product--form"
+      enctype="multipart/form-data">
+         <h4>update item</h4>
+         <img
+         src="../uploaded_img/<?php echo $fetch_edit['image']; ?>" 
+         height="100" width="100"
+         alt="">
          <input 
          type="hidden" 
          name="update_p_id" 
          value="<?php echo $fetch_edit['id']; ?>">
+
          <input 
          type="text" 
          class="main__input--one" 
          required name="update_p_name" 
          value="<?php echo $fetch_edit['name']; ?>">
+
          <input 
          type="number" 
          min="0" 
          class="main__input--one" 
          required name="update_p_price" 
          value="<?php echo $fetch_edit['price']; ?>">
+
          <input 
          type="file" 
          class="main__input--one" 
          required name="update_p_image" 
          accept="image/png, image/jpg, image/jpeg">
+
          <input 
          type="submit" 
          value="update the prodcut" 
          name="update_product" 
-         class="main__button--on">
+         class="main__button--one">
+
          <input 
          type="reset" 
          value="cancel" 
          id="close-edit" 
-         class="main__button--on">
-      </form>
-      <?php
-               };
-            };
-            echo "<script>document.querySelector('.edit-form-container').style.display = 'flex';</script>";
+         class="main__button--one">
+   </form>
+</section>
+
+<?php
          };
-      ?>
-   </section>
-</div>
+      };
+      echo "<script>document.querySelector('.update__product--form').style.display = 'flex';</script>";
+   };
+?>
+
 
 <!-- =============== 
 Footer
@@ -157,7 +187,6 @@ Footer
 ?>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
-
+<script src="../script/script-cart.js"></script>
 </body>
 </html>

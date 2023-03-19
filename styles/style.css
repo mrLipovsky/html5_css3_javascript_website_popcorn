@@ -28,6 +28,7 @@ Variables
   --border-radius: 25px;
   --margine: 1rem;
   --padding: 1rem;
+  --border: 2px solid var(--clr-black);
 }
 /*
 =============== 
@@ -122,15 +123,15 @@ p {
 }
 
 .main__input--one {
-    font-size: 0.875rem;
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 22px 0;
-    background-color: var( --clr-white);
-    padding: .5rem 3rem;
-    box-shadow: 4px 4px #222 ;
-    transform: translateY(-2px);
-    border: solid 1px black;
+  font-size: 0.875rem;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  background-color: var( --clr-white);
+  padding: .5rem 3rem;
+  box-shadow: 4px 4px #222 ;
+  transform: translateY(-2px);
+  border: solid 1px black;
 }
 
 /*

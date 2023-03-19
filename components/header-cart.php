@@ -21,6 +21,6 @@ require_once(__DIR__."/../db/db.php");
       ?>
       <a href="shopping_cart.php" class="header__cart--order">yor order<span><?php echo $row_count; ?></span> </a>
       <div 
-         id="menu-btn" class="fas fa-bars">
+         id="menu-btn">
       </div>
 </header>

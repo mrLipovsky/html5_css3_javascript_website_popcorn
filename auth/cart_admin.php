@@ -23,7 +23,7 @@ if(isset($_POST['add_product']))
 if(isset($_GET['delete']))
 {
    $delete_id = $_GET['delete'];
-   $delete_query = mysqli_query($conn, "DELETE FROM `products` WHERE id = $delete_id ") or die('query failed');
+   $delete_query = mysqli_query($connection, "DELETE FROM `products` WHERE id = $delete_id ") or die('query failed');
    if($delete_query){
       header('Location: add_products.php');
       $message[] = 'product has been deleted';
@@ -42,16 +42,16 @@ if(isset($_POST['update_product']))
    $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
    $update_p_image_folder = '../uploaded_img/'.$update_p_image;
 
-   $update_query = mysqli_query($conn, "UPDATE `products` SET name = '$update_p_name', price = '$update_p_price', image = '$update_p_image' WHERE id = '$update_p_id'");
+   $update_query = mysqli_query($connection, "UPDATE `products` SET name = '$update_p_name', price = '$update_p_price', image = '$update_p_image' WHERE id = '$update_p_id'");
 
    if($update_query)
    {
       move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
       $message[] = 'product updated succesfully';
-      header('Location: admin.php');
+      header('Location: add_products.php');
    }else{
       $message[] = 'product could not be updated';
-      header('Location: admin.php');
+      header('Location: add_products.php');
    }
 }
 

@@ -54,15 +54,15 @@ Message
    if(isset($message))
    {
       foreach($message as $message){
-         echo '<div class="message"><span>'.$message.'</span> 
-         <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i> 
+         echo '<div class="message"><p>'.$message.'</p> 
+         <i onclick="this.parentElement.style.display = `none`;"></i> 
          </div>';
       }
    }
 ?>
 
-<section class="container section__products">
-   <h1>latest products</h1>
+<section class="section__products">
+   <h4>latest products</h4>
    <div class="section__products--container">
       <?php
       $select_products = mysqli_query($connection, "SELECT * FROM `products`");
@@ -72,29 +72,31 @@ Message
       <form action="" method="post">
          <div class="section__products--box">
             <img 
-            src="../uploaded_img/?php echo $fetch_product['image']; ?>" alt="">
+               src="../uploaded_img/<?php echo $fetch_edit['image']; ?>" 
+               height="100" width="100"
+               alt="">            
             <h3><?php echo $fetch_product['name']; ?></h3>
             <div class="price"><?php echo $fetch_product['price']; ?>EUR</div>
             <input 
-            type="hidden" 
-            name="product_name" 
-            class="main__input--one"
-            value="<?php echo $fetch_product['name']; ?>">
+               type="hidden" 
+               name="product_name" 
+               class="main__input--one"
+               value="<?php echo $fetch_product['name']; ?>">
             <input 
-            type="hidden" 
-            name="product_price" 
-            class="main__input--one"
-            value="<?php echo $fetch_product['price']; ?>">
+               type="hidden" 
+               name="product_price" 
+               class="main__input--one"
+               value="<?php echo $fetch_product['price']; ?>">
             <input 
-            type="hidden" 
-            name="product_image" 
-            class="main__input--one"
-            value="<?php echo $fetch_product['image']; ?>">
+               type="hidden" 
+               name="product_image" 
+               class="main__input--one"
+               value="<?php echo $fetch_product['image']; ?>">
             <input 
-            type="submit" 
-            class="main__button--one" 
-            value="add to cart" 
-            name="add_to_cart">
+               type="submit" 
+               class="main__button--one" 
+               value="add to cart" 
+               name="add_to_cart">
          </div>
       </form>
       <?php
