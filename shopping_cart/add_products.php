@@ -1,20 +1,22 @@
-
-<?php
-require_once(__DIR__."/../auth/cart_admin.php");
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>admin panel</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/fontawesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
    <link rel="stylesheet" href="../styles/style_shoping.css">
    <link rel="stylesheet" href="../styles/style.css">
    <link rel="stylesheet" href="../styles/style_media.css">
+   <title>add product</title>
 </head>
 <body>
+<?php
+   require_once(__DIR__."/../auth/cart_admin.php");
+?>
+
 <!-- =============== 
 Header
 ===============  -->
@@ -41,7 +43,7 @@ Header-cart menu
       method="post" 
       class="add__product--form" 
       enctype="multipart/form-data">
-      <h4>latest products</h4>
+      <h4>add products</h4>
          <input 
          type="text" 
          name="p_name" 
@@ -55,19 +57,18 @@ Header-cart menu
          placeholder="enter the product price" 
          class="main__input--one" 
          required>
-         <div class="add__product--btn">
          <input 
          type="file" 
          name="p_image" 
          accept="image/png, image/jpg, image/jpeg" 
-         class="main__button--one" 
+         value="add picture"
+         class="main__input--one" 
          required>
          <input 
          type="submit" 
          value="add the product" 
          name="add_product" 
          class="main__button--one">
-         </div>
       </form>
 </section>
 
@@ -126,6 +127,7 @@ Header-cart menu
    <form 
       action="" 
       method="post" 
+      id="update__product--form"
       class="update__product--form"
       enctype="multipart/form-data">
          <h4>update item</h4>
@@ -141,25 +143,30 @@ Header-cart menu
          <input 
          type="text" 
          class="main__input--one" 
-         required name="update_p_name" 
+         required 
+         name="update_p_name" 
          value="<?php echo $fetch_edit['name']; ?>">
 
          <input 
          type="number" 
          min="0" 
          class="main__input--one" 
-         required name="update_p_price" 
+         required 
+         name="update_p_price" 
          value="<?php echo $fetch_edit['price']; ?>">
 
          <input 
          type="file" 
-         class="main__input--one" 
-         required name="update_p_image" 
+         id="file"
+         class="main__input--one"
+         value="add picture"
+         required 
+         name="update_p_image"
          accept="image/png, image/jpg, image/jpeg">
 
          <input 
          type="submit" 
-         value="update the prodcut" 
+         value="update item" 
          name="update_product" 
          class="main__button--one">
 

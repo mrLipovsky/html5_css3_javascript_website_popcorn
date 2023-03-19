@@ -1,45 +1,23 @@
-<?php
-   require_once(__DIR__."/../db/db.php");
-
-   if(isset($_POST['update_update_btn']))
-      {
-         $update_value = $_POST['update_quantity'];
-         $update_id = $_POST['update_quantity_id'];
-         $update_quantity_query = mysqli_query($connection, " UPDATE `cart` SET quantity = '$update_value'
-         WHERE id = '$update_id'");
-      if($update_quantity_query)
-         {
-               header('location: shopping_cart.php');
-         }
-      }
-
-   if(isset($_GET['remove']))
-      {
-         $remove_id = $_GET['remove'];
-         mysqli_query($connection, " DELETE FROM `cart` WHERE id = '$remove_id'");
-         header('Location: shopping_cart.php');
-      }
-
-      if(isset($_GET['delete_all']))
-      {
-         mysqli_query($connection, "DELETE FROM `cart`");
-         header('Location: shopping_cart.php');
-      }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/fontawesome.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+   <link rel="stylesheet" type="text/css" href="../styles/style.css">
+   <link rel="stylesheet" type="text/css" href="../styles/style_media.css">
+   <link rel="stylesheet" type="text/css" href="../styles/style_shoping.css">
    <title>shopping cart</title>
-   <link rel="stylesheet" href="../styles/style_shoping.css">
-   <link rel="stylesheet" href="../styles/style.css">
-   <link rel="stylesheet" href="../styles/style_media.css">
-
 </head>
 <body>
+
+<?php
+   require_once(__DIR__."/../auth/cart_admin.php");
+?>
+
 <!-- =============== 
 Header
 ===============  -->
@@ -57,7 +35,7 @@ Header-cart menu
 <div class="section__cart">
    <section class="section__cart--container">
       <h4>shopping cart</h4>
-      <table class="section__cart--table">
+      <table class="section__cart--table" cellspacing="0">
             <th>image</th>
             <th>name</th>
             <th>price</th>
@@ -88,11 +66,13 @@ Header-cart menu
                      <input 
                         type="hidden" 
                         name="update_quantity_id"  
+                        class="main__input--one"
                         value="<?php echo $fetch_cart['id']; ?>">
                      <input
                         type="number" 
                         name="update_quantity" 
                         min="1"  
+                        class=""
                         value="<?php echo $fetch_cart['quantity']; ?>">
                   </td>
                   <td>
@@ -106,7 +86,7 @@ Header-cart menu
                         value="update" 
                         class="main__button--one">
                      <a 
-                        href="shopping_cart.php?remove=<?php echo $fetch_cart['id']; ?>" 
+                        href="/../auth/cart_admin.php?remove=<?php echo $fetch_cart['id']; ?>" 
                         onclick="return confirm('remove item from cart?')" 
                         class="main__button--one"> 
                         remove
@@ -119,7 +99,9 @@ Header-cart menu
             };
             };
             ?>
-            <tr class="shopping__cart--table-bottom">
+            </table>
+            <table class="shopping__cart--table-bottom">
+            <tr >
                <div>
                   <td> 
                      grand total <?php echo $grand_total; ?>EUR

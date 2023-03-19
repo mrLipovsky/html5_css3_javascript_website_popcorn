@@ -48,11 +48,36 @@ if(isset($_POST['update_product']))
    {
       move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
       $message[] = 'product updated succesfully';
-      header('Location: add_products.php');
+      header('Location:  /../shopping_cart/add_products.php');
    }else{
       $message[] = 'product could not be updated';
-      header('Location: add_products.php');
+      header('Location: /../shopping_cart/add_products.php');
    }
+}
+
+if(isset($_POST['update_update_btn']))
+{
+   $update_value = $_POST['update_quantity'];
+   $update_id = $_POST['update_quantity_id'];
+   $update_quantity_query = mysqli_query($connection, " UPDATE `cart` SET quantity = '$update_value'
+   WHERE id = '$update_id'");
+if($update_quantity_query)
+   {
+         header('location: /../shopping_cart/shopping_cart.php');
+   }
+}
+
+if(isset($_GET['remove']))
+{
+   $remove_id = $_GET['remove'];
+   mysqli_query($connection, " DELETE FROM `cart` WHERE id = '$remove_id'");
+   header('Location: /../shopping_cart/shopping_cart.php');
+}
+
+if(isset($_GET['delete_all']))
+{
+   mysqli_query($connection, "DELETE FROM `cart`");
+   header('Location: /../shopping_cart/shopping_cart.php');
 }
 
 ?>

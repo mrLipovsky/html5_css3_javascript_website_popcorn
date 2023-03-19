@@ -1,5 +1,5 @@
-@import "style.css";
-@import "style_media.css";
+@import ".style.css";
+@import ".style_media.css";
 
 
 .message{
@@ -25,28 +25,25 @@ Cart header
 =========
 */
 .header__cart {
-    position: sticky;
     display: flex;
     align-items: center;
-    text-align: center;
-    justify-content: space-between;
+    justify-content:space-between;
     padding: 2rem;
     background-color: var(--clr-primary-2);
     margin: 2rem auto;
 }
 
-.header__cart--order span {
+.header__cart--order a {
     margin: 0 1rem;
 }
 
-
-/* #menu-btn{
+#menu-btn{
     margin-left: 2rem;
     font-size: 3rem;
     cursor: pointer;
     color:var(--white);
     display: none;
-} */
+}
 
 
 /* 
@@ -175,61 +172,57 @@ Section your order - cart
 .section__cart--table th{
     padding:1.5rem;
     font-size: 1rem;
+    border: solid 1px rgb(216, 216, 216);
 }
 
 .section__cart--table tr td {
     padding:1.5rem;
     font-size: 1rem;
+    border: solid 1px rgb(216, 216, 216);
 }
 .section__cart--table tr td a {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    padding: .5rem 0 ;
+    font-family: var(--ff-primary);
+}
+
+.section__cart--table tr td a:hover {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: .5rem 0 ;
+    font-family: var(--ff-primary);
 }
 
 .section__cart--table tr td img {
     border-radius: 50%;
 }
 
-input[type="number"]{
-    font-size: 1rem;
-    padding: 1rem;
-    color:var(--black);
-    text-align: center;
-}
-
-input[type="number"]:hover{
-    font-size: 1rem;
-    padding: 1rem;
-    color:var(--black);
-    border: var(--border);
-    text-align: center;
-}
 
 .shopping__cart--table-bottom {
     display: flex;
     flex-direction: column;
-    padding: 4rem 0;
+}
+.shopping__cart--table-bottom tr {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
     align-items: center;
     text-align: center;
     font-weight: bold;
 }
+
 .shopping__cart--table-bottom td {
     text-align: center;
     font-weight: bold;
     padding: 1rem 0;
-
 }
 
 .shopping__cart--table-bottom td a {
     text-align: center;
     font-weight: bold;
-}
-
-.main__button--one a.disabled{
-    pointer-events: none;
-    opacity: .5;
-    user-select: none;
-    background-color: var(--red);
 }
 
 /* 

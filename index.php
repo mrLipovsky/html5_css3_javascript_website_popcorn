@@ -1,51 +1,15 @@
-<?PHP 
-// session_start();
-// if (!empty($_SESSION["userName"])) {
-//     header("Location: ../login.php");
-//     session_destroy();
-// } else {
-//     // header("Location: ../index.php");
-//     // session_destroy();
-// }
-
-
-// ssjhjjs
-
-// $repo = new ItemRepository($connection);
-// $crypt = new Crypt();
-
-// $input = array("Username" => "PeterLipo", "Password" => "ssjhjjs", "FirstName" => "Peter", "LastName"=> "Lipo");
-// $newUserId = $repo -> create($input);
-
-// var_dump( $repo -> retrieve("Id = 1"));
-
-// $input = array("FirstName" => "Martin");
-// $podminka = "Id = 1";
-
-// $repo -> update($input, $podminka);
-
-// $input = "Id = 2";
-// $repo -> delete($input);
-
-// $res = $repo -> get_Items_by_group("PeterLipo");
-
-// var_dump($res);
-
-// echo $crypt -> encrypt("ssjhjjs");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
-    <base href="/">
-    <link href="/styles/style.css" rel="stylesheet" media="screen">
-    <link href="/styles/style_media.css" rel="stylesheet" media="screen">
-    <title>popcorn website</title>
+    <link href="../styles/style.css" rel="stylesheet" media="screen">
+    <link href="../styles/style_media.css" rel="stylesheet" media="screen">
+    <title>popcorn index</title>
 </head>
 <body>
 <!-- =============== 
@@ -153,7 +117,6 @@ sections contact
         </div>
     </div>
 </section>
-<hr>
 
 <!-- =============== 
 footer

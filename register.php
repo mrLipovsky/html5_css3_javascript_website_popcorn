@@ -10,7 +10,7 @@
     <base href="/">
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
     <link rel="stylesheet" type="text/css" href="./styles/style_media.css">
-    <title>Popcorn registration</title>
+    <title>registration page</title>
 </head>
 <body>
 
