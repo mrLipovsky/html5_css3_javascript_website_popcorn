@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
     <link href="../styles/style.css" rel="stylesheet" media="screen">
     <link href="../styles/style_media.css" rel="stylesheet" media="screen">
+    <link href="../styles/style_cookies.css" rel="stylesheet" media="screen">
     <title>popcorn index</title>
 </head>
 <body>
@@ -128,11 +129,24 @@ include "./components/footer.php";
 <!-- =============== 
 cookies
 ===============  -->
+<div id="cookie__popup">
+        <h4>Cookie Consent</h4>
+        <p>Our website uses cookies to provide your browsing experience and relavent informations.Before continuing to use our website, you agree & accept of our 
+        <a href="https://www.idoklad.cz/cookie-policy">Cookie Policy & Privacy</a>
+        </p>
+        <button  onclick="setCookies()" id="acceptCookieBtn">Accept</button> 
+        <button id="deleteCookieBtn">Delete</button> 
+        <button onclick="showCookies()">Show cookies</button>
+        <div>
+  <code id="cookies"></code>
+</div>
 
+</div>
 
 <!-- =============== 
 javascript
 ===============  -->
     <script src="./script/script.js"></script>
+    <script src="./script/script-cookies.js"> </script>
 </body>
 </html>

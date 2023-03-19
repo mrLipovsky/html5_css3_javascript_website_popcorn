@@ -1,57 +1,65 @@
-// set cookie according to you
-var cookieName= "CodingStatus";
-var cookieValue="Coding Tutorials";
-var cookieExpireDays= 10;
+let acceptCookieBtn = document.getElementById("acceptCookieBtn");
+acceptCookieBtn.onclick= function(){
+    setCookie(cookies, value, cookieExpiration);
+}
 
-// when users click accept button
-let acceptCookie = document.getElementById("acceptCookie");
-    acceptCookie.onclick= function()
-    {
-    createCookie(cookieName, cookieValue, cookieExpireDays);
-    }
+let deleteCookieBtn = document.getElementById("deleteCookieBtn");
+deleteCookieBtn.addEventListener("click", () => {
+    cookies.value = deleteCookie("cookies");
+});
 
-// function to set cookie in web browser
-let createCookie= function(cookieName, cookieValue, cookieExpireDays)
+function showCookies() {
+    const output = document.getElementById("cookies");
+    output.textContent = `> ${document.cookie}`;
+}
+
+
+function setCookie(cookies, value, cookieExpiration)
 {
     let currentDate = new Date();
-        currentDate.setTime(currentDate.getTime() + (cookieExpireDays*24*60*60*1000));
+    currentDate.setTime(currentDate.getTime() + (cookieExpiration*24*60*60*1000));
     let expires = "expires=" + currentDate.toGMTString();
-        document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+    document.cookie = `${cookies}=${value}; ${expires};path=/`;
     if(document.cookie)
     {
         document.getElementById("cookie__popup").style.display = "none";
     }else
-    {
+    {   
+        document.getElementById("cookie__popup").style.display;
         alert("Unable to set cookie. Please allow all cookies site from cookie setting of your browser");
     }
 }
 
-// get cookie from the web browser
-let getCookie= function(cookieName)
+function deleteCookie(cookies) 
 {
-    let name = cookieName + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for(let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-        c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-        }
-    }
-    return "";
+    setCookie(cookies, null, null);
 }
-// check cookie is set or not
-let checkCookie= function()
+
+function getCookie(cookies)
 {
-    let check=getCookie(cookieName);
-    if(check==""){
-        document.getElementById("cookie__popup").style.display = "block";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split("; ");
+    let result = null;
+    
+    ca.forEach(element => {
+        if(element.indexOf(cookies) == 0){
+            result = element.substring(cookies.lenght + 1)
+        }
+    })
+    return result;
+    
+}
+
+function checkCookie()
+{
+    let check = getCookie("cookies");
+    if(check != ""){
+        document.getElementById("cookie__popup").style.display;
     }else{
-        
         document.getElementById("cookie__popup").style.display = "none";
+        if (check != "" && check != null) {
+            setCookie("cookies", value, 365);
+        }
     }
 }
 checkCookie();
