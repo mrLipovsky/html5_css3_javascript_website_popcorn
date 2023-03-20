@@ -129,16 +129,16 @@ include "./components/footer.php";
 <!-- =============== 
 cookies
 ===============  -->
-<div id="cookie__popup">
+<div class="section__cookies-container main__input--one" id="cookies" >
+    <div  class="section__cookies-text">
         <h4>Cookie Consent</h4>
         <p>Our website uses cookies to provide your browsing experience and relavent informations.Before continuing to use our website, you agree & accept of our 
         <a href="https://www.idoklad.cz/cookie-policy">Cookie Policy & Privacy</a>
         </p>
-        <button  onclick="setCookies()" id="acceptCookieBtn">Accept</button> 
-        <button id="deleteCookieBtn">Delete</button> 
-        <button onclick="showCookies()">Show cookies</button>
-        <div>
-  <code id="cookies"></code>
+    </div>
+        <button class="section__cookies-btn main__button--two" 
+        id="acceptCookieBtn">Accept</button> 
+    <div>
 </div>
 
 </div>

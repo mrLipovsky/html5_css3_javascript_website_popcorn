@@ -72,7 +72,7 @@ Header-cart menu
                         type="number" 
                         name="update_quantity" 
                         min="1"  
-                        class=""
+                        class="section__cart--form-number"
                         value="<?php echo $fetch_cart['quantity']; ?>">
                   </td>
                   <td>

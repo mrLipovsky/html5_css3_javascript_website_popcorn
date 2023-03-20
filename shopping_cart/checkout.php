@@ -183,11 +183,11 @@ Header-cart menu
             required
             class="main__input--one">
          </div>
-         <div class="checkout__form-input">
+         <div class="checkout__form-input ">
             <p>payment method</p>
-            <select name="method">
-               <option value="cash on delivery" selected>cash on delivery</option>
-               <option value="pick up in the shop">pick up in the shop</option>
+            <select  class="checkout__form-option" name="method">
+               <option class="checkout__form-option" value="cash on delivery" selected>cash on delivery</option>
+               <option class="checkout__form-option" value="pick up in the shop">pick up in the shop</option>
             </select>
          </div>
          <div class="checkout__form-btn">

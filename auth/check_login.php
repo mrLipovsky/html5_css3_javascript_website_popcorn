@@ -35,30 +35,32 @@ if(isset($_POST["submit"]))
             } 
         }
 
-        // else {
-    //     if(empty($_POST["remember"]))
-    //     {
-    //         if(isset($_COOKIE["remember"])){
-    //            setcookie("remember", 1,  null, -1, '/'); // vyprsi za 10 dnu
-    //         }
+        else {
+        if(empty($_POST["remember"]))
+        {
+            if(isset($_COOKIE["remember"])){
+               setcookie("remember", 1,  null, -1, '/'); // vyprsi za 10 dnu
+            }
             
-    //         if(!isset($_COOKIE["userName"])){
-    //             setcookie("userName", $userName,  null, -1, '/'); // vyprsi za 10 dnu
-    //         }
+            if(!isset($_COOKIE["userName"])){
+                setcookie("userName", $userName,  null, -1, '/'); // vyprsi za 10 dnu
+            }
             
-    //         if(!isset($_COOKIE["password"])){
-    //             setcookie("password", $password,  null, -1, '/'); // vyprsi za 10 dnu
-    //         }
-    //     }
-    //     if($auth -> check_user($userName, $password))
-    //     {
-    //         session_start();
-    //         $_SESSION["userName"] = $userName;
-    //         $_SESSION["password"] = $password;
-    //         header("Location: ../index.php");
-    //     }
+            if(!isset($_COOKIE["password"])){
+                setcookie("password", $password,  null, -1, '/'); // vyprsi za 10 dnu
+            }
+        }
+        if($auth -> check_user($userName, $password))
+        {
+            session_start();
+            $_SESSION["userName"] = $userName;
+            $_SESSION["password"] = $password;
+            header("Location: ../index.php");
+        }
     }
 }
+}
+    
 
 
 ?>

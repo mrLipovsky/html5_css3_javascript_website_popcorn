@@ -27,7 +27,7 @@ if(isset($_POST["operation_type"]))
             $groupRepo -> update($input, $condition);
         }
     }
-    else if($_POST["operation_typr"] == "delete")
+    else if($_POST["operation_type"] == "delete")
     {
         if(isset($_POST["Id"]))
         {

@@ -14,6 +14,7 @@ if(isset($_POST["submit"]))
     $confirmationPassword = $_POST["confirmationPassword"];
     $firstName = $_POST["firstName"];
     $lastName = $_POST["lastName"];
+    $admin = $_POST["admin"];
     if(isset($userName) && isset($password) && isset($confirmationPassword) && isset($firstName) && isset($lastName) && isset($admin)
     && !empty($userName) && !empty($password) && !empty($confirmationPassword) && !empty($firstName) && !empty($lastName) && !empty($admin))
     {

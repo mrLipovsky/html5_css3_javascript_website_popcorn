@@ -92,12 +92,19 @@ Section add products
     border-radius: 50%;
 }
 
+.section__cart--form-number {
+    font-size: 0.875rem;
+    border: solid 1px rgb(255, 255, 255);
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 0;
+}
+
 /* 
 =============
 Section update products
 =============
 */
-
 .update__product-form-container {
     display: flex;
     justify-content: center;
@@ -224,18 +231,37 @@ Section your order - cart
     text-align: center;
     font-weight: bold;
 }
-
 /* 
 ========
 Checkout form
 ========
 */
+.checkout__form {
+    display: flex;
+    flex-direction: column;
+    color:var(--black);
+    margin: 0 auto;
+    padding: 0 10rem ;
+}
+
+.checkout__form-option {
+    font-size: 0.875rem;
+    width: 100%;
+    margin: 5px 0 22px 0;
+    background-color: var( --clr-white);
+    padding: .5rem 3rem;
+    box-shadow: 4px 4px #222 ;
+    transform: translateY(-2px);
+    border: solid 1px black;
+    color: #7e7e7e;
+}
+
 .checkout__message-container {
     display: flex;
     flex-direction: column;
-    justify-content: left;
     text-align: left;
     margin: auto 2rem ;
+    width: 50%;
 }
 
 .checkout__message {

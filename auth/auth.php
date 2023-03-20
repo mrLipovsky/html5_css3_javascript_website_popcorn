@@ -44,9 +44,8 @@ class Auth implements IAuth
         unset($_SESSION["remember"]);
 
         header("Location: ../index.php");
-        session_destroy();
+        // session_destroy();
     }
-
 }
     
     // public function remember_user() : void
