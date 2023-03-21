@@ -18,6 +18,7 @@ Header
 <?php
     include "../web_popcorn/components/header.php";
 ?>
+
 <!-- =============== 
 Login Form
 ===============  -->
@@ -41,13 +42,12 @@ Login Form
             required 
             class="main__input--one">
         </div>
-        <!-- <div class='form__register-input-group input-control'>
+        <div class='form__register-input-group input-control'>
             <label>Remember me: </label>
             <input 
             type="checkbox"  
             name="remember"
-            id="remember" 
-            class=""> -->
+            class="">
         </div>
         <div class='form__register-input-btn '>
             <input 

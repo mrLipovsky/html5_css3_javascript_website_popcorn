@@ -1,13 +1,4 @@
 
-const cookieExist = document.cookie;
-    if (cookieExist != "") {
-        document.querySelector("#cookies").style.display = "none";
-    }
-    else {
-        setCookie("cookie", true, 30);
-    }
-
-
 setCookie = (cName, cValue, cookieExpiration) => 
 {
     let currentDate = new Date();
@@ -41,7 +32,15 @@ document.querySelector("#acceptCookieBtn").addEventListener("click", () => {
 
 cookieMessage = () => {
     if(!getComputedStyle("cookie"))
-    document.querySelector("#cookies").style.display = "block";
+    document.querySelector("#cookie").style.display = "block";
 }
 
 window.addEventListener("load", cookieMessage);
+
+
+if (getCookie(cName) != "") {
+    document.querySelector("#cookies").style.display = "none";
+}
+else {
+    setCookie("cookie", true, 30);
+}

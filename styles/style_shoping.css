@@ -259,9 +259,9 @@ Checkout form
 .checkout__message-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: left;
     margin: auto 2rem ;
-    width: 50%;
 }
 
 .checkout__message {
@@ -318,6 +318,10 @@ Checkout form
     margin:0 auto;
     box-shadow: var(--box-shadow);
     border:var(--border);
+}
+
+.checkout__form-display-message {
+    color: red;
 }
 
 .checkout__form-display-order span {
