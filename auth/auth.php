@@ -31,11 +31,9 @@ class Auth implements IAuth
         setcookie("userName", "", time() - 8640 *10);
         unset($_COOKIES["userName"]);
 
-        session_start();
         setcookie("password", "", time() - 8640 *10);
         unset($_COOKIES["password"]);
 
-        session_start();
         setcookie("remember", "", time() - 8640 *10);
         unset($_COOKIES["remember"]);
 

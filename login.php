@@ -42,10 +42,13 @@ Login Form
             class="main__input--one">
         </div>
         <!-- <div class='form__register-input-group input-control'>
-            <label for="remember">Remember me: </label>
-            <input type="checkbox"  name="remember" id="remember" 
-            class="">
-        </div> -->
+            <label>Remember me: </label>
+            <input 
+            type="checkbox"  
+            name="remember"
+            id="remember" 
+            class=""> -->
+        </div>
         <div class='form__register-input-btn '>
             <input 
             type="submit" 

@@ -17,7 +17,7 @@ class Signer implements ISigner
         $this -> crypt = new Crypt();
     }
 
-    public function add_user(string $userName,string $password, string $confirmationPassword, string $firstName, string $lastName, string $admin) : void
+    public function add_user(string $userName,string $password, string $confirmationPassword, string $firstName, string $lastName, $admin) : void
     {
         if($password === $confirmationPassword)
         {

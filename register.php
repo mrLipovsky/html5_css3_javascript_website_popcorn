@@ -60,6 +60,10 @@ Register Form
                 <input type="text"  name="lastName" id="lastName" 
                 class="main__input--one">
             </div>
+            <div class='form__register-input-group input-control'>
+                <input type="hidden"  name="admin" id="admin" value="0"
+                class="main__input--one">
+            </div>
             <div class='form__register-input-btn'>
                 <input type="submit" name="submit" value="register" 
                 class="form__register-btn main__button--one">

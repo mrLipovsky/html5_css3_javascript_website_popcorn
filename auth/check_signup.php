@@ -4,7 +4,7 @@ require_once(__DIR__."/../db/db.php");
 require_once(__DIR__."/signer.php");
 require_once(__DIR__."/auth.php");
 
-$auth = new Auth($connection);
+// $auth = new Auth($connection);
 
 
 if(isset($_POST["submit"]))

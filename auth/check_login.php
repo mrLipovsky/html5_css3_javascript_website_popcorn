@@ -10,7 +10,9 @@ if(isset($_POST["submit"]))
 {
     $userName = $_POST["userName"];
     $password = $_POST["password"];
-    if(isset($userName) && isset($password) && !empty($userName) && !empty($password))
+    
+    if(isset($userName) && isset($password)  
+    && !empty($userName) && !empty($password))
     {
         if($auth -> check_user($userName, $password))
         {
@@ -27,15 +29,13 @@ if(isset($_POST["submit"]))
             }
             
             if(!isset($_COOKIE["userName"])){
-                setcookie("username", $userName, time() + 86400 * 10); // vyprsi za 10 dnu
+                setcookie("userName", $userName, time() + 86400 * 10); // vyprsi za 10 dnu
             }
             
             if(!isset($_COOKIE["password"])){
                 setcookie("password", $password, time() + 86400 * 10); // vyprsi za 10 dnu
             } 
-        }
-
-        else {
+        } else {
         if(empty($_POST["remember"]))
         {
             if(isset($_COOKIE["remember"])){
@@ -59,8 +59,9 @@ if(isset($_POST["submit"]))
         }
     }
 }
-}
-    
+
+} 
+
 
 
 ?>
