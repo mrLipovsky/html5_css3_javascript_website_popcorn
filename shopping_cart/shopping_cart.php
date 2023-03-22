@@ -52,9 +52,8 @@ Header-cart menu
                <tr >
                   <td>
                      <img 
-                     src="../uploaded_img/<?php echo $fetch_edit['image']; ?>" 
-                     height="100" width="100"
-                     alt="">  
+                        src="../uploaded_img/<?php echo $row['image']; ?>" 
+                        height="100" width="100">   
                   </td>
                   <td>
                      <?php echo $fetch_cart['name']; ?>
@@ -140,6 +139,6 @@ Footer
 ?>
 
 <!-- custom js file link  -->
-<script src="../scrypt/script-cart.js"></script>
+<script src="../script/script-cart.js"></script>
 </body>
 </html>

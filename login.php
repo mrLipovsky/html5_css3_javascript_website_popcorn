@@ -47,6 +47,7 @@ Login Form
             <input 
             type="checkbox"  
             name="remember"
+            value="null" 
             class="">
         </div>
         <div class='form__register-input-btn '>

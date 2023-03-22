@@ -61,7 +61,8 @@ Register Form
                 class="main__input--one">
             </div>
             <div class='form__register-input-group input-control'>
-                <input type="hidden"  name="admin" id="admin" value="0"
+                <input type="hidden"  name="admin" id="admin" 
+                value="null" 
                 class="main__input--one">
             </div>
             <div class='form__register-input-btn'>

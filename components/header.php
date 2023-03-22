@@ -78,8 +78,10 @@ Header
         </div>
     <!-- login nav -->
         <div >
-            <ul class="nav__center--login" id="js-menu-login">
-            <?php if (isset($_SESSION['userName'])): ?>
+            <ul class="nav__center--login" id="">
+            <?php 
+            session_start();
+            if (isset($_SESSION['userName'])): ?>
                     <div class="message__login--text">
                     <li>
                         <p>You are logged in: <strong><?php echo $_SESSION['userName']?></strong></p>

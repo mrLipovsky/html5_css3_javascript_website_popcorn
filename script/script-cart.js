@@ -1,7 +1,7 @@
 
 
 document.querySelector('#close-edit').onclick = () =>{
-   document.getElementsByClassName('.update__product--form').style.display = 'none';
+   document.getElementsByClassName('update__product--form').style.display = 'none';
    window.location.href = '../shopping_cart/add_products.php';
 };
 

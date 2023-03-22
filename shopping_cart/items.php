@@ -73,9 +73,8 @@ Message
       <form action="" method="post">
          <div class="section__products--box">
             <img 
-               src="../uploaded_img/<?php echo $fetch_edit['image']; ?>" 
-               height="100" width="100"
-               alt="">            
+               src="../uploaded_img/<?php echo $row['image']; ?>" 
+               height="100" width="100">          
             <h3><?php echo $fetch_product['name']; ?></h3>
             <div class="price"><?php echo $fetch_product['price']; ?>EUR</div>
             <input 
@@ -114,7 +113,8 @@ Footer
 <?php
    include "../components/footer.php";
 ?>
+
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="../script/script-cart.js"></script>
 </body>
 </html>

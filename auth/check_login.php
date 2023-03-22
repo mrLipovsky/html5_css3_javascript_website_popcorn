@@ -9,37 +9,42 @@ if(isset($_POST["submit"]))
 {
     $userName = $_POST["userName"];
     $password = $_POST["password"];
+
     if(isset($userName) && isset($password) && !empty($userName) && !empty($password))
     {
         // validator
         if(!empty($_POST["remember"]))
         {
-            if(!isset($_COOKIE["remember"])){
+            if(!isset($_COOKIE["remember"]))
+            {
                 setcookie("remember", 1, time() + 86400 * 10); // vyprsi za 10 dnu
             }
             
-            if(!isset($_COOKIE["username"])){
+            if(!isset($_COOKIE["userName"]))
+            {
                 setcookie("userName", $userName, time() + 86400 * 10); // vyprsi za 10 dnu
             }
             
-            if(!isset($_COOKIE["password"])){
+            if(!isset($_COOKIE["password"]))
+            {
                 setcookie("password", $password, time() + 86400 * 10); // vyprsi za 10 dnu
-            } else {
-                setcookie("userName","");
-                setcookie("password","");
-                echo "Cookies Not Set";
-            }
-        }
-        if($auth -> check_user($userName, $password))
+            } 
+            
+        } if($auth -> check_user($userName, $password))
         {
+            session_start();
             $_SESSION["userName"] = $userName;
             $_SESSION["password"] = $password;
-
             header("Location: ../index.php");
         }
-        // header("Location: ../login.php");
+        
+        else {
+            header("Location: ../login.php");
+        }
+        
+    } else {
+        header("Location: ../login.php");
     }
-    // header("Location: ../index.php");
 }
 
 

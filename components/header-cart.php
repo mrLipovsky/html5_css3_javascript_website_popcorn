@@ -9,7 +9,7 @@ require_once(__DIR__."/../db/db.php");
          $result = $connection->query("SELECT * FROM users");
          while ($row = $result->fetch_assoc()) 
          {
-            if ( ($row['admin'] == "admin") && (!empty($_SESSION["userName"])))
+            if ( ($row['admin'] == 1) && (!empty($_SESSION["userName"])))
             {
                   echo "<a href='../shopping_cart/add_products.php'>add products</a>";
             } 
