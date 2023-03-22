@@ -113,7 +113,8 @@ p {
 }
 
 .main__button--one > a {
-  font-size: 10px
+  font-size: 10px;
+  color: var(--clr-red);
 }
 
 .main__button--one:hover {
@@ -131,6 +132,18 @@ p {
   margin: var(--margine);
   cursor: pointer;
   border: 2px solid var(--clr-black);
+}
+
+.main__button--two a.disabled{
+  pointer-events: none;
+  opacity: .5;
+  user-select: none;
+  background-color: var(--red);
+}
+
+.main__button--two > a {
+  font-size: 10px;
+  color: var(--clr-white);
 }
 
 .main__button--two:hover {
@@ -446,6 +459,34 @@ sections contact
   text-align: center;
   margin: 2rem;
 }
+
+
+/*
+=============== 
+sections about
+===============  
+*/
+.section__about--menu {
+  margin: var(--margine);
+}
+.section__about {
+  flex-direction: column;
+  font-family: var(--ff-secondary);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  padding: var(--padding);
+  margin-bottom: 3rem;
+  background-color: var(--clr-background);
+}
+.section__about--text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 0 2rem;
+  margin-bottom: 3rem;
+}
+
 
 /*
 =============== 

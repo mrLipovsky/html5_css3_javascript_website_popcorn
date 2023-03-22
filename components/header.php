@@ -60,18 +60,18 @@ Header
                 </li>
                 <li>
                     <a 
-                    href="#contact" 
+                    href="../index.php#contact" 
                     class="nav-links">contact</a>
                     
                 </li>
                 <li>
                     <a
-                    href="#recipes" 
+                    href="../recipes.php" 
                     class="nav-links">recipes</a>
                 </li>
                 <li>
                     <a 
-                    href="#about" 
+                    href="../index.php#about" 
                     class="nav-links">about</a>
                 </li>
             </ul>

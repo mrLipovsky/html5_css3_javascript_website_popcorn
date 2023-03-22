@@ -39,6 +39,8 @@ main {
 
 .main__article, 
 .section__contact,
+.section__about,
+.section__recipes,
 .nav__all,
 .main__article--buttons,
 .nav__center--logo,
@@ -206,6 +208,8 @@ footer .fab, .far, .fas{
 .main__article, 
 .section__motto, 
 .section__contact,
+.section__about,
+.section__recipes,
 .main__article--buttons,
 .nav__center--logo {
   display: flex;
@@ -283,6 +287,8 @@ For Desctop
   .main__article, 
   .section__motto, 
   .section__contact,
+  .section__about,
+  .section__recipes,
   .nav__all,
   .main__article--buttons {
       max-width: 900px;
@@ -345,6 +351,8 @@ For Desctop
   .main__article, 
   .section__motto, 
   .section__contact,
+  .section__about,
+  .section__recipes,
   .main__article--buttons,
   .nav__center--logo {
     display: flex;

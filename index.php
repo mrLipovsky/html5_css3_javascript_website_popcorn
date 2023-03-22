@@ -42,9 +42,11 @@ sections main
         </p>
         <div class="main__article--buttons">
             <button class="main__button--one">
-                <a href="../shopping_cart/products.php"><span>Shop</span></a>
+                <a href="./shopping_cart/items.php"><span>Shop</span></a>
             </button>
-            <button class="main__button--two"> Contact</button>
+            <button class="main__button--two"> 
+                <a href="../index.php#contact">Contact</a>
+            </button>
         </div>
     </div>
 </main>
@@ -103,20 +105,35 @@ sections contact
     </div>
     <div class="section__contact--details">
         <div class="details">
-        <i class="fas fa-phone"></i>        
-        <h3>Adress</h3>
-        <p>Prague, Czech Republic</p>
+            <i class="fas fa-phone"></i>        
+            <h3>Adress</h3>
+            <p>Prague, Czech Republic</p>
         </div>
         <div class="details">
-        <i class="fas fa-map-signs"></i>
-        <h3>Phone</h3>            
-        <p>123 345 555</p>
+            <i class="fas fa-map-signs"></i>
+            <h3>Phone</h3>            
+            <p>+420 345 555</p>
         </div>
         <div class="details">
-        <i class="fas fa-envelope"></i>   
-        <h3>E-mail</h3>         
-        <p>shop.popcorn.com</p>
+            <i class="fas fa-envelope"></i>   
+            <h3>E-mail</h3>         
+            <p>shop.popcorn.com</p>
         </div>
+    </div>
+</section>
+
+<!-- =============== 
+sections about
+===============  -->
+<section class="section__about">
+    <h1 id="about" class="section__about--menu main__grafic--one" >
+        About us
+    </h1>
+    <div class="section__about--text">
+        <h3>We realy like poppin’</h3>
+        <p>
+        Don’t be shy. Send us anything. Good recommendations or serious critics, we take it all.
+        </p>
     </div>
 </section>
 

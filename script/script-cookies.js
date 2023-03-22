@@ -30,17 +30,22 @@ document.querySelector("#acceptCookieBtn").addEventListener("click", () => {
     }
 })
 
-cookieMessage = () => {
-    if(!getComputedStyle("cookie"))
-    document.querySelector("#cookie").style.display = "block";
-}
+if (document.cookie) {
+        document.querySelector("#cookies").style.display = "none";
+    }
+    else {
+        addEventListener("cookie can not be set");
+    }
 
-window.addEventListener("load", cookieMessage);
 
 
-if (getCookie(cName) != "") {
-    document.querySelector("#cookies").style.display = "none";
-}
-else {
-    setCookie("cookie", true, 30);
-}
+
+// cookieMessage = () => {
+//     if(!getCookie(cName))
+//     document.querySelector("#cookie").style.display = "block";
+// }
+
+// window.addEventListener("load", (cookieMessage) => {
+//     console.log("page is fully loaded");
+// )};
+
