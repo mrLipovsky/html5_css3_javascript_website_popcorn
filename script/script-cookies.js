@@ -30,12 +30,12 @@ document.querySelector("#acceptCookieBtn").addEventListener("click", () => {
     }
 })
 
-if (document.cookie) {
-        document.querySelector("#cookies").style.display = "none";
-    }
-    else {
-        addEventListener("cookie can not be set");
-    }
+// if (document.cookie) {
+//         document.querySelector("#cookies").style.display = "none";
+//     }
+//     else {
+//         addEventListener("cookie can not be set");
+//     }
 
 
 

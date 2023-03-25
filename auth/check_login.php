@@ -18,6 +18,7 @@ if(isset($_POST["submit"]))
             if(!isset($_COOKIE["remember"]))
             {
                 setcookie("remember", 1, time() + 86400 * 10); // vyprsi za 10 dnu
+                
             }
             
             if(!isset($_COOKIE["userName"]))

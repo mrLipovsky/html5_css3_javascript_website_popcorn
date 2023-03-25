@@ -70,7 +70,7 @@ main {
 }
 .nav__button-toggle {
   border: none;
-  background-color: var(--clr-white);
+  background-color: var(--ff-secondary);
   padding: 0.5rem 3rem;
 }
 .nav__center--social,
@@ -84,7 +84,7 @@ main {
   margin-top: 1rem;
 }
 .nav__button-toggle {
-  font-size:20px
+  font-size:--var(--)
 }
 .nav__button-toggle:hover > i  {
   font-size:25px
